@@ -3,27 +3,23 @@ const mongoose = require("mongoose");
 const RefSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
+    required: false,
   },
   image: {
     type: String,
-    require: true,
+    required: false,
   },
   cloudinaryId: {
     type: String,
-    require: true,
-  },
-  media: {
-    type: String,
-    required: true,
+    required: false,
   },
   link: {
     type: String,
-    required: true,
+    required: false,
   },
   likes: {
     type: Number,
-    required: true,
+    required: false,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
@@ -33,9 +29,9 @@ const RefSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  iframe :{
-  type: String,
-  required: true,
+  tag: {
+    type: String,
+    required: false,
   }
 });
 
