@@ -17,10 +17,6 @@ const RefSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
-  likes: {
-    type: Number,
-    required: false,
-  },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
@@ -31,7 +27,7 @@ const RefSchema = new mongoose.Schema({
   },
   tag: {
     type: String,
-    required: false,
+    required: true,
   }
 });
 

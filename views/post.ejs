@@ -203,95 +203,57 @@
                         <h5 class="card-title popup-title">Manage all of your references</h5>
                      </div>
                   </div>
-                  <form action="/post/<%= post._id %>/createRef" class="popup-form" enctype="multipart/form-data" method="POST">
+                  <form action="/post/<%= post._id %>/createRef" class="popup-form" enctype="multipart/form-data"
+                     method="POST">
                      <div class="row gy-3 mb-3">
+                        <h3>Upload Pictures</h3>
                         <div class="col-lg-6">
-                           <label for="exampleFormControlInput6" class="form-label">Link</label>
-                           <input type="text" class="form-control" id="exampleFormControlInput6" placeholder="Link" name="link">
+                           <label for="exampleFormControlInput5" class="form-label">Image</label>
+                           <input type="file" class="form-control" id="exampleFormControlInput5" placeholder="New Image"
+                              name="file">
                         </div>
+
+                        <hr>
+                        <h3>Add Videos and Links</h3>
                         <div class="col-lg-6">
                            <label for="exampleFormControlInput6" class="form-label">Title</label>
-                           <input type="text" class="form-control" id="exampleFormControlInput6" placeholder="Title" name="title">
+                           <input type="text" class="form-control" id="exampleFormControlInput6" placeholder="Title"
+                              name="title">
                         </div>
                         <div class="col-lg-6">
                            <label for="exampleFormControlInput7" class="form-label">Caption</label>
-                           <input type="text" class="form-control" id="exampleFormControlInput7" placeholder="Add a caption" name="caption">
+                           <input type="text" class="form-control" id="exampleFormControlInput7"
+                              placeholder="Add a caption" name="caption">
                         </div>
                      </div>
-                     <button class="custom-btn2" type="submit">Add</button>
+
+                     <div class="col-lg-6">
+                        <label for="exampleFormControlInput6" class="form-label">Link</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput6" placeholder="Link"
+                           name="link">
+                     </div>
+
+                     <hr>
+                     <div class="container mt-4">
+                        <h3>Choose a Tag</h3>
+                        <div class="mb-3">
+                           <select name="tag">
+                              <option value="wigs" selected> Wigs</option>
+                              <option value="makeup"> Make-up</option>
+                              <option value="clothes"> Clothes</option>
+                              <option value="props"> Props</option>
+                              <option value="ref"> References</option>
+                              <option value="gallery"> Convention Photos</option>
+                           </select>
+                        </div>
+
+                        <button class="custom-btn2" type="submit">Add</button>
                   </form>
 
-                        <div class="container mt-4">
-                           <h3>Choose the best fitting tag</h3>
-                           <div class="mb-3">
-                              <select name = "tag">
-                                 <option selected>Select one...</option>
-                                 <option value="wigs"> Wigs</option>
-                                 <option value="makeup"> Make-up</option>
-                                 <option value="clothes"> Clothes</option>
-                                 <option value="props"> Props</option>
-                                 <option value="ref"> References</option>
-                                 <option value="gallery"> Convention Photos</option>
-                              </select>
-                           </div>
-                  
-
-               </form>
-
-            </div>
-         </div>
-      </div>
-   </div>
-   </div>
-
-  
-   <!-- modal 2 -->
-   <div class="modal popup-box fade" id="exampleModal2" tabindex="-1" aria-hidden="true">
-      <!-- make the id the same for modal container and the button that calling it (so changes will affect whatever object the user clicked instead of just the first object) -->
-      <div class="modal-dialog popup-box-dialog modal-dialog-centered">
-         <div class="modal-content popup-box-content">
-            <div class="popup-card" style="width:100%">
-               <button type="button" class="btn popup2-btn  ms-auto" data-bs-dismiss="modal"><i
-                     class="fa-solid fa-xmark"></i></button>
-               <img src="/assets/images/popup.png" class="card-img-top" alt="popup-bg">
-               <div class="card-body popup-card-body">
-                  <div class="popup-title-area">
-                     <p class="popup-sub">Stay Organized</p>
-                     <h5 class="card-title popup-title">Manage all of your references</h5>
-                  </div>
                </div>
-
-               <form action="/post/<%= post._id %>/createRef" class="popup-form" enctype="multipart/form-data"
-                  method="POST">
-                  <div class="row gy-3 mb-3">
-                     <div class="col-lg-6">
-                        <label for="exampleFormControlInput5" class="form-label">Image</label>
-                        <input type="file" class="form-control" id="exampleFormControlInput5" placeholder="New Image"
-                           name="file">
-                     </div>
-                     <!-- <div class="container mt-4">
-                           <h3>Choose the best fitting tag</h3>
-                           <div class="mb-3">
-                              <select>
-                                 <option selected>Select one...</option>
-                                 <option value="wigs"> Wigs</option>
-                                 <option value="makeup"> Make-up</option>
-                                 <option value="clothes"> Clothes</option>
-                                 <option value="props"> Props</option>
-                                 <option value="ref"> References</option>
-                                 <option value="gallery"> Convention Photos</option>
-                              </select>
-                           </div> -->
-                  </div>
-                  <button class="custom-btn2" type="submit">Add</button>
             </div>
-
-            </form>
-
          </div>
       </div>
-   </div>
-   </div>
    </div>
 
    <!-- schedule sec start -->
@@ -307,7 +269,6 @@
 
          <div class="card-button col-5">
             <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">+ Inspo</button>
-            <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal2">+ Photo</button>
          </div>
 
          <div class="schedule-content-wrap">
@@ -349,85 +310,74 @@
             <div class="tab-content schedule-tab-content" id="pills-tabContent">
                <div class="tab-pane fade show active" id="pills-day-1" role="tabpanel" aria-labelledby="pills-day-1-tab"
                   tabindex="0">
-                  
-            <section id="speakers" class="speakers-gallery-sec position-relative">
-               <div class="container">
-                  <div class="speakers-gallery-items-wrap">
-                     <div class="row">
-                        <% for(var i=0; i<refs.length; i++) {%>
-                           <div class="col-md-6 col-lg-4 col-xl-3">
-                              <div class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
-                                 data-aos-duration="400">
-                                 <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
-                                    <img class="img-fluid" src="<%= refs[i].image %>">
+                  <section id="speakers" class="speakers-gallery-sec position-relative">
+                     <div class="container">
+                        <div class="speakers-gallery-items-wrap">
+                           <div class="row">
+                              <% for(var i=0; i<refs.length; i++) {%>
+                                 <% if (!refs[i].title && !refs[i].caption && !refs[i].link) { %>
+                                 <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
+                                       data-aos-duration="400">
+                                       <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
+                                          <img class="img-fluid" src="<%= refs[i].image %>">
+                                       </div>
+                                       <ul class="social-icons social">
+                                          <li>
+                                             <a href="#">View</a>
+                                          </li>
+                                          <li>
+                                             <form
+                                                action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                                method="POST">
+                                                <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
+                                                         aria-hidden="true"></i></button></a>
+                                             </form>
+                                          </li>
+                                       </ul>
+                                    </div>
                                  </div>
-                                 <ul class="social-icons social">
-                                    <li>
-                                       <a href="#">Work</a>
-                                    </li>
-                                    <li>
-                                       <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE" method="POST">
-                                          <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
-                                                   aria-hidden="true"></i></button></a>
-                                       </form>
-                                    </li>
-                                 </ul>
-                                 <div class="item-content">
-                                    <h3 class="title">
-
-                                    </h3>
-                                    <span class="sub">
-
-                                    </span>
-                                 </div>
-
-                              </div>
+                                 <% } %>
+                                 <% } %>
                            </div>
-                           <% } %>
+                        </div>
                      </div>
-                  </div>
-            </section>
-
+                  </section>
 
                   <% for(var i=0; i<refs.length; i++) {%>
-
+                     <% if (!refs[i].image) { %>
                      <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear"
                         data-aos-duration="1000" style="background-image: url(/assets/images/banner/schedule1.png);">
                         <div class="col-lg-4">
                            <div class="d-flex align-items-center justify-content-around">
-                              <div class="card-thumb item-thumb">
+                              <div class="card-thumb item-thumb"></div>
 
-                              </div>
-                              <div class="card-description">
-                                 <span class="name d-block">
-                                    <%= refs[i].title %>
-                                 </span>
-                                 <span class="date d-block">
-                                    <%= refs[i].caption %>
-                                 </span>
-                                 <span class="time d-block">
-                                    <%= refs[i].link %>
-                                 </span>
-                              </div>
                            </div>
                         </div>
                         <div class="col-lg-8">
-                           <div class=" d-flex align-items-center justify-content-between">
+                           <div class="d-flex align-items-center justify-content-between">
                               <div class="card-title-area col-7">
-                                 <h4 class="title">Presentation and Keynotes</h4>
-                                 <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                    creative leaders.<a href="#">Read More</a></p>
+                                 <h4 class="title">
+                                    <%= refs[i].title %>
+                                 </h4>
+                                 <p class="title-desc">
+                                    Link<a href="<%= refs[i].link %>" target ="_blank">
+                                          <%= refs[i].link %>
+                                       </a>
+                                 </p>
                               </div>
                               <div class="card-button col-5">
-                                 <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                    Tickets</button>
+                                 <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                    method="POST">
+                                    <a><button type="submit" class="custom-btn2"><i class="fa fa-trash"
+                                             aria-hidden="true"></i></button></a>
+                                 </form>
                               </div>
                            </div>
                         </div>
                      </div>
                      <% } %>
-
-
+                     <% } %>
 
 
                </div>
@@ -822,6 +772,42 @@
                </div>
                <div class="tab-pane fade" id="pills-day-6" role="tabpanel" aria-labelledby="pills-day-6-tab"
                   tabindex="0">
+
+                  <section id="speakers" class="speakers-gallery-sec position-relative">
+                     <div class="container">
+                        <div class="speakers-gallery-items-wrap">
+                           <div class="row">
+                              <% for(var i=0; i<refs.length; i++) {%>
+                                 <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag === 'ref') { %>
+                                 <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
+                                       data-aos-duration="400">
+                                       <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
+                                          <img class="img-fluid" src="<%= refs[i].image %>">
+                                       </div>
+                                       <ul class="social-icons social">
+                                          <li>
+                                             <a href="#">View</a>
+                                          </li>
+                                          <li>
+                                             <form
+                                                action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                                method="POST">
+                                                <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
+                                                         aria-hidden="true"></i></button></a>
+                                             </form>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                                 <% } %>
+                                 <% } %>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
+
+
                   <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000"
                      style="background-image: url(/assets/images/banner/schedule1.png);">
                      <div class="col-lg-4">
@@ -937,6 +923,40 @@
                </div>
                <div class="tab-pane fade" id="pills-day-7" role="tabpanel" aria-labelledby="pills-day-7-tab"
                   tabindex="0">
+
+                  <section id="speakers" class="speakers-gallery-sec position-relative">
+                     <div class="container">
+                        <div class="speakers-gallery-items-wrap">
+                           <div class="row">
+                              <% for(var i=0; i<refs.length; i++) {%>
+                                 <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag === 'gallery') { %>
+                                 <div class="col-md-6 col-lg-4 col-xl-3">
+                                    <div class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
+                                       data-aos-duration="400">
+                                       <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
+                                          <img class="img-fluid" src="<%= refs[i].image %>">
+                                       </div>
+                                       <ul class="social-icons social">
+                                          <li>
+                                             <a href="#">View</a>
+                                          </li>
+                                          <li>
+                                             <form
+                                                action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                                method="POST">
+                                                <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
+                                                         aria-hidden="true"></i></button></a>
+                                             </form>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                                 <% } %>
+                                 <% } %>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
                   <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000"
                      style="background-image: url(/assets/images/banner/schedule1.png);">
                      <div class="col-lg-4">
