@@ -63,6 +63,14 @@ Introducing Cosplay Collection, the ultimate app for organizing and enhancing yo
                Here is where you can add your next character to list of cosplays.
             </h2>
          </div>
+
+         <div class="d-flex justify-content-center mt-5">
+            <button class="custom-btn custom-btn2" value="Upload" data-bs-toggle="modal" data-bs-target="#addChara">+
+               Character</button>
+            </div>
+
+            <hr>
+
          <div class="speakers-gallery-items-wrap">
 
             <div class="row">
@@ -73,7 +81,7 @@ Introducing Cosplay Collection, the ultimate app for organizing and enhancing yo
                         data-aos-duration="400">
 
                         <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
-                           <img class="img-fluid" src="<%= posts[i].image%>">
+                           <img class="img-fluid" id = "image-size" src="<%= posts[i].image%>">
                         </div>
                         <ul class="social-icons social">
                            <li>
@@ -115,10 +123,7 @@ Introducing Cosplay Collection, the ultimate app for organizing and enhancing yo
          </div>
          <div>
 
-            <div class="d-flex justify-content-center mt-5">
-            <button class="custom-btn custom-btn2" value="Upload" data-bs-toggle="modal" data-bs-target="#addChara">+
-               Character</button>
-            </div>
+         
 
          </div>
          <div class="shape">

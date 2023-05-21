@@ -2654,3 +2654,9 @@ hr {
     font-size: 22px;
   }
 }
+
+#image-size {
+  height: 400px;
+
+  object-fit: cover; /* or object-fit: contain; depending on your preference */
+}
