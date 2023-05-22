@@ -109,6 +109,16 @@
       });
     });
   
+   // JavaScript code
+$(document).ready(function() {
+  // Event handler for the "View" button
+  $(".view-btn").click(function() {
+    var imageUrl = $(this).data("image-url");
+    $("#enlargedImage").attr("src", imageUrl);
+    $("#imageModal").modal("show");
+  });
+});
+
       
   })(jQuery);
   
@@ -137,133 +147,4 @@
   
   
   
-  // document.querySelector('#speakerAdd').addEventListener('click', addCharacter)
-  // const speakersGallery = document.getElementById('speakers');
-  // function addCharacter(){
-  
-  //   const newGalleryItem = document.createElement('div');
-  //   newGalleryItem.classList.add('col-md-6', 'col-lg-4', 'col-xl-3');
-  //   newGalleryItem.innerHTML = `
-    
-  //     <div class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="400">
-  //       <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
-  //         <img src="assets/images/gallery/gallery1.jpg" alt="Gallery Image 1">
-  //       </div>
-  //       <div class="">
-  //         <ul class="social-icons social">
-  //           <li>
-  //             <a href="">Work</a>
-  //           </li>
-  //           <li>
-  //             <a href="" class="edit-speaker-btn" data-speaker-id="1">Edit</a>
-  //           </li>
-  //           <li>
-  //             <a href="">Delete</a>
-  //           </li>
-  //         </ul>
-  //       </div>
-  //       <div class="item-content">
-  //         <h3 class="title">Character Name</h3>
-  //         <span class="sub">Media Name</span>
-  //       </div>
-  //     </div>
-  //   `;
-    
-  //   // add new gallery item to speakers gallery
-  //   speakersGallery.querySelector('.speakers-gallery-items-wrap .row').appendChild(newGalleryItem);
-  
-  //   // Select the edit button and add an event listener
-  //   const editBtn = newGalleryItem.querySelector('.edit-speaker-btn');
-  //   editBtn.addEventListener('click', (event) => {
-  //     event.preventDefault();
-    
-  //     // Retrieve the speaker ID from the data attribute
-  //     const speakerId = event.target.getAttribute('data-speaker-id');
-  
-  //     // Open the modal with a form for editing the speaker
-  //     const modal = document.getElementById('edit-speaker-modal');
-  //     modal.style.display = 'block';
-    
-  //     // Populate the form with the current speaker data
-  //     const speakerNameInput = modal.querySelector('#speaker-name-input');
-  //     const mediaNameInput = modal.querySelector('#media-name-input');
-  //     // ...
-    
-  //     // Add an event listener to the form submit button
-  //     const submitBtn = modal.querySelector('#submit-btn');
-  //     submitBtn.addEventListener('click', (event) => {
-  //       event.preventDefault();
-      
-  //       // Retrieve the new speaker data from the form
-  //       const newSpeakerName = speakerNameInput.value;
-  //       const newMediaName = mediaNameInput.value;
-  //       // ...
-      
-  //       fetch(`/speakers/${speakerId}`)
-  //         .then(response => response.json())
-  //         .then(speaker => {
-  //           // Set the values of the form fields to the speaker data
-  //           speakerNameInput.value = speaker.name;
-  //           mediaNameInput.value = speaker.media;
-         
-  //         // ...
-  //       })
-  //       .catch(error => console.error(error));
-  //     });
-  //   });
-  // }
-  
-  
-  //  // Get the input values
-  //  const name = document.querySelector('#name').value;
-  //  const title = document.querySelector('#title').value;
-  //  // const image = speakerForm.elements.image.value;
-  
-  //  // Create a new gallery item
-  //  const newGalleryItem = document.createElement('div');
-  //  newGalleryItem.classList.add('col-md-6', 'col-lg-4', 'col-xl-3');
-  //  newGalleryItem.innerHTML = `
-  //    <div class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="400">
-  //      <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
-     
-  //      </div>
-  //      <div class="">
-  //        <ul class="social-icons social">
-  //          <li>
-  //            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-  //          </li>
-  //          <li>
-  //            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
-  //          </li>
-  //          <li>
-  //            <a href=""><i class="fa-brands fa-twitter"></i></a>
-  //          </li>
-  //        </ul>
-  //      </div>
-  //      <div class="item-content">
-  //        <h3 class="title">${name}</h3>
-  //        <span class="sub">${title}</span>
-  //      </div>
-  //    </div>
-  //  `;
-  
-  //  // Add the new gallery item to speakers gallery
-  //  speakersGallery.querySelector('.speakers-gallery-items-wrap .row').appendChild(newGalleryItem);
-  
-  //  // Send the speaker data to the server
-  //  const data = { name, title, image };
-  //  fetch('/speakers', {
-  //    method: 'POST',
-  //    headers: {
-  //      'Content-Type': 'application/json'
-  //    },
-  //    body: JSON.stringify(data)
-  //  })
-  //  .then(response => response.json())
-  //  .then(data => console.log(data))
-  //  .catch(error => console.error(error));
-  
-  //  // Reset the form
-  //  speakerForm.reset();
-  // }
   

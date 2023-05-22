@@ -238,7 +238,8 @@
                         <h3>Choose a Tag</h3>
                         <div class="mb-3">
                            <select name="tag">
-                              <option value="wigs" selected> Wigs</option>
+                              <option value selected>Select One...</option>
+                              <option value="wigs"> Wigs</option>
                               <option value="makeup"> Make-up</option>
                               <option value="clothes"> Clothes</option>
                               <option value="props"> Props</option>
@@ -306,39 +307,52 @@
 
             </ul>
 
-
+<!-- Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered modal-lg">
+     <div class="modal-content" id = "modalview">
+       <div class="modal-body text-center">
+         <div class="enlarged-image-container">
+           <img id="enlargedImage" class="img-fluid" src="" alt="Enlarged Image">
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ 
             <div class="tab-content schedule-tab-content" id="pills-tabContent">
                <div class="tab-pane fade show active" id="pills-day-1" role="tabpanel" aria-labelledby="pills-day-1-tab"
                   tabindex="0">
+
                   <section id="speakers" class="speakers-gallery-sec position-relative">
                      <div class="container">
                         <div class="speakers-gallery-items-wrap">
                            <div class="row">
                               <% for(var i=0; i<refs.length; i++) {%>
                                  <% if (!refs[i].title && !refs[i].caption && !refs[i].link) { %>
-                                 <div class="col-md-6 col-lg-4 col-xl-3">
-                                    <div class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
-                                       data-aos-duration="400">
-                                       <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
-                                          <img class="img-fluid" src="<%= refs[i].image %>">
+                                    <div class="col-md-6 col-lg-4 col-xl-3">
+                                       <div class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
+                                          data-aos-duration="400">
+                                          <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
+                                             <img class="img-fluid" src="<%= refs[i].image %>">
+                                          </div>
+                                          <ul class="social-icons social">
+                                             <li>
+                                                <a href="#" class="view-btn" data-image-url="<%= refs[i].image %>">View</a>
+                                             </li>
+                                             <li>
+                                                <form
+                                                   action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                                   method="POST">
+                                                   <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
+                                                            aria-hidden="true"></i></button></a>
+                                                </form>
+                                             </li>
+                                          </ul>
                                        </div>
-                                       <ul class="social-icons social">
-                                          <li>
-                                             <a href="#">View</a>
-                                          </li>
-                                          <li>
-                                             <form
-                                                action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
-                                                method="POST">
-                                                <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
-                                                         aria-hidden="true"></i></button></a>
-                                             </form>
-                                          </li>
-                                       </ul>
                                     </div>
-                                 </div>
-                                 <% } %>
-                                 <% } %>
+                                    <% } %>
+                                       <% } %>
                            </div>
                         </div>
                      </div>
@@ -346,38 +360,38 @@
 
                   <% for(var i=0; i<refs.length; i++) {%>
                      <% if (!refs[i].image) { %>
-                     <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear"
-                        data-aos-duration="1000" style="background-image: url(/assets/images/banner/schedule1.png);">
-                        <div class="col-lg-4">
-                           <div class="d-flex align-items-center justify-content-around">
-                              <div class="card-thumb item-thumb"></div>
+                        <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear"
+                           data-aos-duration="1000" style="background-image: url(/assets/images/banner/schedule1.png);">
+                           <div class="col-lg-4">
+                              <div class="d-flex align-items-center justify-content-around">
+                                 <div class="card-thumb item-thumb"></div>
 
+                              </div>
                            </div>
-                        </div>
-                        <div class="col-lg-8">
-                           <div class="d-flex align-items-center justify-content-between">
-                              <div class="card-title-area col-7">
-                                 <h4 class="title">
-                                    <%= refs[i].title %>
-                                 </h4>
-                                 <p class="title-desc">
-                                    Link<a href="<%= refs[i].link %>" target ="_blank">
+                           <div class="col-lg-8">
+                              <div class="d-flex align-items-center justify-content-between">
+                                 <div class="card-title-area col-7">
+                                    <h4 class="title">
+                                       <%= refs[i].title %>
+                                    </h4>
+                                    <p class="title-desc">
+                                       Link<a href="<%= refs[i].link %>" target="_blank">
                                           <%= refs[i].link %>
                                        </a>
-                                 </p>
-                              </div>
-                              <div class="card-button col-5">
-                                 <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
-                                    method="POST">
-                                    <a><button type="submit" class="custom-btn2"><i class="fa fa-trash"
-                                             aria-hidden="true"></i></button></a>
-                                 </form>
+                                    </p>
+                                 </div>
+                                 <div class="card-button col-5">
+                                    <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                       method="POST">
+                                       <a><button type="submit" class="custom-btn2"><i class="fa fa-trash"
+                                                aria-hidden="true"></i></button></a>
+                                    </form>
+                                 </div>
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <% } %>
-                     <% } %>
+                        <% } %>
+                           <% } %>
 
 
                </div>
@@ -386,6 +400,42 @@
 
                <div class="tab-pane fade" id="pills-day-2" role="tabpanel" aria-labelledby="pills-day-2-tab"
                   tabindex="0">
+
+                  <section id="speakers" class="speakers-gallery-sec position-relative">
+                     <div class="container">
+                        <div class="speakers-gallery-items-wrap">
+                           <div class="row">
+                              <% for(var i=0; i<refs.length; i++) {%>
+                                 <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag==='wigs' ) {
+                                    %>
+                                    <div class="col-md-6 col-lg-4 col-xl-3">
+                                       <div class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
+                                          data-aos-duration="400">
+                                          <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
+                                             <img class="img-fluid" src="<%= refs[i].image %>">
+                                          </div>
+                                          <ul class="social-icons social">
+                                             <li>
+                                                <a href="#">View</a>
+                                             </li>
+                                             <li>
+                                                <form
+                                                   action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                                   method="POST">
+                                                   <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
+                                                            aria-hidden="true"></i></button></a>
+                                                </form>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                    </div>
+                                    <% } %>
+                                       <% } %>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
+
 
                   <div class="row schedule-item" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000"
                      style="background-image: url(/assets/images/banner/schedule2.png);">
@@ -418,8 +468,46 @@
 
                </div>
 
+               <!-- makeup -->
+
                <div class="tab-pane fade" id="pills-day-3" role="tabpanel" aria-labelledby="pills-day-3-tab"
                   tabindex="0">
+
+                  <section id="speakers" class="speakers-gallery-sec position-relative">
+                     <div class="container">
+                        <div class="speakers-gallery-items-wrap">
+                           <div class="row">
+                              <% for(var i=0; i<refs.length; i++) {%>
+                                 <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag==='makeup' )
+                                    { %>
+                                    <div class="col-md-6 col-lg-4 col-xl-3">
+                                       <div class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
+                                          data-aos-duration="400">
+                                          <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
+                                             <img class="img-fluid" src="<%= refs[i].image %>">
+                                          </div>
+                                          <ul class="social-icons social">
+                                             <li>
+                                                <a href="#">View</a>
+                                             </li>
+                                             <li>
+                                                <form
+                                                   action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                                   method="POST">
+                                                   <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
+                                                            aria-hidden="true"></i></button></a>
+                                                </form>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                    </div>
+                                    <% } %>
+                                       <% } %>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
+
                   <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000"
                      style="background-image: url(/assets/images/banner/schedule1.png);">
                      <div class="col-lg-4">
@@ -449,65 +537,54 @@
                      </div>
                   </div>
 
-                  <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule1.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile1.png" alt="Profile 1">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Stella Smith</span>
-                              <span class="date d-block">October2,2023</span>
-                              <span class="time d-block">08:00 - 08:45</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Presentation and Keynotes</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row schedule-item" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule2.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile2.png" alt="Profile 2">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Thomas Smith</span>
-                              <span class="date d-block">October 2, 2023</span>
-                              <span class="time d-block">09:00 - 09:45</span>
+               </div>
+
+               <!-- clothes -->
+
+               <div class="tab-pane fade" id="pills-day-4" role="tabpanel" aria-labelledby="pills-day-4-tab"
+                  tabindex="0">
+
+                  <section id="speakers" class="speakers-gallery-sec position-relative">
+                     <div class="container">
+                        <div class="speakers-gallery-items-wrap">
+                           <div class="row">
+                              <% for(var i=0; i<refs.length; i++) {%>
+                                 <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag==='clothes' )
+                                    { %>
+                                    <div class="col-md-6 col-lg-4 col-xl-3">
+                                       <div class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
+                                          data-aos-duration="400">
+                                          <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
+                                             <img class="img-fluid" src="<%= refs[i].image %>">
+                                          </div>
+                                          <ul class="social-icons social">
+                                             <li>
+                                                <a href="#">View</a>
+                                             </li>
+                                             <li>
+                                                <form
+                                                   action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                                   method="POST">
+                                                   <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
+                                                            aria-hidden="true"></i></button></a>
+                                                </form>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                    </div>
+                                    <% } %>
+                                       <% } %>
                            </div>
                         </div>
                      </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Sessions and Labs</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+                  </section>
+
+
 
                   <div class="row schedule-item" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000"
                      style="background-image: url(/assets/images/banner/schedule2.png);">
+
+
                      <div class="col-lg-4">
                         <div class="d-flex align-items-center justify-content-around">
                            <div class="card-thumb">
@@ -516,7 +593,7 @@
                            <div class="card-description">
                               <span class="name d-block">Vincent Smith</span>
                               <span class="date d-block">October2,2023</span>
-                              <span class="time d-block">08:00 - 08:45</span>
+                              <span class="time d-block">12:00 - 12:45</span>
                            </div>
                         </div>
                      </div>
@@ -534,9 +611,47 @@
                         </div>
                      </div>
                   </div>
+
                </div>
-               <div class="tab-pane fade" id="pills-day-4" role="tabpanel" aria-labelledby="pills-day-4-tab"
+
+               <!-- props -->
+               <div class="tab-pane fade" id="pills-day-5" role="tabpanel" aria-labelledby="pills-day-5-tab"
                   tabindex="0">
+
+                  <section id="speakers" class="speakers-gallery-sec position-relative">
+                     <div class="container">
+                        <div class="speakers-gallery-items-wrap">
+                           <div class="row">
+                              <% for(var i=0; i<refs.length; i++) {%>
+                                 <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag==='props' ) {
+                                    %>
+                                    <div class="col-md-6 col-lg-4 col-xl-3">
+                                       <div class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
+                                          data-aos-duration="400">
+                                          <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
+                                             <img class="img-fluid" src="<%= refs[i].image %>">
+                                          </div>
+                                          <ul class="social-icons social">
+                                             <li>
+                                                <a href="#">View</a>
+                                             </li>
+                                             <li>
+                                                <form
+                                                   action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                                   method="POST">
+                                                   <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
+                                                            aria-hidden="true"></i></button></a>
+                                                </form>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                    </div>
+                                    <% } %>
+                                       <% } %>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
                   <div class="row schedule-item" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000"
                      style="background-image: url(/assets/images/banner/schedule2.png);">
                      <div class="col-lg-4">
@@ -566,210 +681,9 @@
                      </div>
                   </div>
 
-                  <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule1.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile1.png" alt="Profile 1">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Stella Smith</span>
-                              <span class="date d-block">October2,2023</span>
-                              <span class="time d-block">08:00 - 08:45</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Presentation and Keynotes</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-
-                  <div class="row schedule-item" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule2.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile2.png" alt="Profile 2">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Thomas Smith</span>
-                              <span class="date d-block">October 2, 2023</span>
-                              <span class="time d-block">09:00 - 09:45</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Sessions and Labs</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-
-                  <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule1.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile3.png" alt="Profile 3">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Monica Smith</span>
-                              <span class="date d-block">October 2, 2023</span>
-                              <span class="time d-block">10:00 - 10:45</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Events and Networking</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
                </div>
-               <div class="tab-pane fade" id="pills-day-5" role="tabpanel" aria-labelledby="pills-day-5-tab"
-                  tabindex="0">
-                  <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule1.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile3.png" alt="Profile 3">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Monica Smith</span>
-                              <span class="date d-block">October 2, 2023</span>
-                              <span class="time d-block">10:00 - 10:45</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Events and Networking</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
 
-                  <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule1.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile1.png" alt="Profile 1">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Stella Smith</span>
-                              <span class="date d-block">October2,2023</span>
-                              <span class="time d-block">08:00 - 08:45</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Presentation and Keynotes</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row schedule-item" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule2.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile2.png" alt="Profile 2">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Thomas Smith</span>
-                              <span class="date d-block">October 2, 2023</span>
-                              <span class="time d-block">09:00 - 09:45</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Sessions and Labs</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-
-                  <div class="row schedule-item" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule2.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile4.png" alt="Profile 4">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Vincent Smith</span>
-                              <span class="date d-block">October2,2023</span>
-                              <span class="time d-block">08:00 - 08:45</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Luminary Sessions</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+               <!-- references -->
                <div class="tab-pane fade" id="pills-day-6" role="tabpanel" aria-labelledby="pills-day-6-tab"
                   tabindex="0">
 
@@ -778,30 +692,31 @@
                         <div class="speakers-gallery-items-wrap">
                            <div class="row">
                               <% for(var i=0; i<refs.length; i++) {%>
-                                 <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag === 'ref') { %>
-                                 <div class="col-md-6 col-lg-4 col-xl-3">
-                                    <div class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
-                                       data-aos-duration="400">
-                                       <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
-                                          <img class="img-fluid" src="<%= refs[i].image %>">
+                                 <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag==='ref' ) {
+                                    %>
+                                    <div class="col-md-6 col-lg-4 col-xl-3">
+                                       <div class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
+                                          data-aos-duration="400">
+                                          <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
+                                             <img class="img-fluid" src="<%= refs[i].image %>">
+                                          </div>
+                                          <ul class="social-icons social">
+                                             <li>
+                                                <a href="#">View</a>
+                                             </li>
+                                             <li>
+                                                <form
+                                                   action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                                   method="POST">
+                                                   <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
+                                                            aria-hidden="true"></i></button></a>
+                                                </form>
+                                             </li>
+                                          </ul>
                                        </div>
-                                       <ul class="social-icons social">
-                                          <li>
-                                             <a href="#">View</a>
-                                          </li>
-                                          <li>
-                                             <form
-                                                action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
-                                                method="POST">
-                                                <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
-                                                         aria-hidden="true"></i></button></a>
-                                             </form>
-                                          </li>
-                                       </ul>
                                     </div>
-                                 </div>
-                                 <% } %>
-                                 <% } %>
+                                    <% } %>
+                                       <% } %>
                            </div>
                         </div>
                      </div>
@@ -836,91 +751,12 @@
                         </div>
                      </div>
                   </div>
-                  <div class="row schedule-item" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule2.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile2.png" alt="Profile 2">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Thomas Smith</span>
-                              <span class="date d-block">October 2, 2023</span>
-                              <span class="time d-block">09:00 - 09:45</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Presentation and Keynotes</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule1.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile3.png" alt="Profile 3">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Monica Smith</span>
-                              <span class="date d-block">October 2, 2023</span>
-                              <span class="time d-block">10:00 - 10:45</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Presentation and Keynotes</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row schedule-item" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule2.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile4.png" alt="Profile 4">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Stella Smith</span>
-                              <span class="date d-block">October2,2023</span>
-                              <span class="time d-block">08:00 - 08:45</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Presentation and Keynotes</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+
+
+
                </div>
+
+               <!-- Con photos -->
                <div class="tab-pane fade" id="pills-day-7" role="tabpanel" aria-labelledby="pills-day-7-tab"
                   tabindex="0">
 
@@ -929,34 +765,36 @@
                         <div class="speakers-gallery-items-wrap">
                            <div class="row">
                               <% for(var i=0; i<refs.length; i++) {%>
-                                 <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag === 'gallery') { %>
-                                 <div class="col-md-6 col-lg-4 col-xl-3">
-                                    <div class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
-                                       data-aos-duration="400">
-                                       <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
-                                          <img class="img-fluid" src="<%= refs[i].image %>">
+                                 <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag==='gallery' )
+                                    { %>
+                                    <div class="col-md-6 col-lg-4 col-xl-3">
+                                       <div class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
+                                          data-aos-duration="400">
+                                          <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
+                                             <img class="img-fluid" src="<%= refs[i].image %>">
+                                          </div>
+                                          <ul class="social-icons social">
+                                             <li>
+                                                <a href="#">View</a>
+                                             </li>
+                                             <li>
+                                                <form
+                                                   action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                                   method="POST">
+                                                   <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
+                                                            aria-hidden="true"></i></button></a>
+                                                </form>
+                                             </li>
+                                          </ul>
                                        </div>
-                                       <ul class="social-icons social">
-                                          <li>
-                                             <a href="#">View</a>
-                                          </li>
-                                          <li>
-                                             <form
-                                                action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
-                                                method="POST">
-                                                <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
-                                                         aria-hidden="true"></i></button></a>
-                                             </form>
-                                          </li>
-                                       </ul>
                                     </div>
-                                 </div>
-                                 <% } %>
-                                 <% } %>
+                                    <% } %>
+                                       <% } %>
                            </div>
                         </div>
                      </div>
                   </section>
+
                   <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000"
                      style="background-image: url(/assets/images/banner/schedule1.png);">
                      <div class="col-lg-4">
@@ -986,91 +824,8 @@
                      </div>
                   </div>
 
-                  <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule1.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile1.png" alt="Profile 1">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Stella Smith</span>
-                              <span class="date d-block">October2,2023</span>
-                              <span class="time d-block">08:00 - 08:45</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Presentation and Keynotes</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row schedule-item" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule2.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile2.png" alt="Profile 2">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Thomas Smith</span>
-                              <span class="date d-block">October 2, 2023</span>
-                              <span class="time d-block">09:00 - 09:45</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Sessions and Labs</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
 
-                  <div class="row schedule-item" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule2.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile4.png" alt="Profile 4">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Vincent Smith</span>
-                              <span class="date d-block">October2,2023</span>
-                              <span class="time d-block">08:00 - 08:45</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Luminary Sessions</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+
                </div>
             </div>
             <div class="dots img-moving-anim1">

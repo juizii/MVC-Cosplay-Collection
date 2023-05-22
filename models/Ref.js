@@ -28,7 +28,11 @@ const RefSchema = new mongoose.Schema({
   tag: {
     type: String,
     required: true,
-  }
+  },
+  postId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Post"
+  },
 });
 
 module.exports = mongoose.model("Ref", RefSchema);

@@ -2656,14 +2656,29 @@ hr {
 }
 
 .speakers-gallery-item-thumb {
-  height: 400px;
+  height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .speakers-gallery-item-thumb img.img-fluid {
-  object-fit: cover; /* or object-fit: contain; depending on your preference */
+  object-fit: contain; /* or object-fit: contain; depending on your preference */
   max-width: 100%;
   max-height: 100%;
+}
+
+.enlarged-image-container {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+#enlargedImage {
+  max-width: 100%;
+  height: auto;
+}
+#modalview {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
 }
