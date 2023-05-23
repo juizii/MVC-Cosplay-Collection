@@ -1,3 +1,4 @@
+const User = require("../models/User");
 const mongoose = require("mongoose");
 
 const CountSchema = new mongoose.Schema({
@@ -7,7 +8,7 @@ const CountSchema = new mongoose.Schema({
         },
         user: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "User"
+            ref: User
           }
   
 });

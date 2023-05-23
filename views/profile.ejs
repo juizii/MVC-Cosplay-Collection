@@ -7,12 +7,12 @@
           <div class="section-head col-xl-9 m-auto text-center mb-5">
             <span class="label" id="countdown">Start the Countdown</span>
           </div>
-          <form id="countdown" action="/profile/countdown" method="POST">
+          <form id="countdown" action="/countdown" method="POST">
             <label for="countdown-date" class="title">Enter the date for your next con: </label>
             <input type="date" id="countdown-date" name="countdownDate" required>
-            <ul class="counter-box d-flex justify-content-around" data-countdown="">
-            </ul>
-            <button type="button" id="countdown-submit">Set Countdown</button>
+            <ul class="counter-box d-flex justify-content-around" data-countdown=""></ul>
+            <button type="submit" id="countdown-submit">Set Countdown</button>
+            <button type="button" id="countdown-reset">Reset Countdown</button>
           </form>
           
        
@@ -59,7 +59,7 @@ Introducing Cosplay Collection, the ultimate app for organizing and enhancing yo
    <section id="speakers" class="speakers-gallery-sec position-relative">
       <div class="container">
          <div class="section-head col-xl-8 m-auto text-center mb-5">
-            <span class="label">Create a new Character Project</span>
+            <span class="label" id ="space">Create a new Character Project</span>
             <h2 class="title">
                Here is where you can add your next character to list of cosplays.
             </h2>
