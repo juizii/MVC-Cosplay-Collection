@@ -165,97 +165,82 @@
             </div>
          </nav>
          <section class="hero-sec" style="background-image: url(/assets/images/banner/group.png);">
-            <div class="hero-slider-wrap">
-               <div class="hero-slider-item overflow-hidden">
-                  <div class="container">
-                     <div class="row align-items-center">
-                        <div class="col-lg-8 col-md-6 order-md-1 order-2">
-                           <div class="slider-item-content-wrap">
+   
                               <div class="item-content">
-                                 <h3 class="item-title1">
-                                    Stay Organized with Your Cosplays!
-                                 </h3>
                                  <img src="/assets/images/dots/dots.png" alt="Shadow Image"
                                     class="dots-1 opacity-50 img-moving-anim2">
                               </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
+                     
          </section>
       </header>
 
       <!-- modal -->
-
-      <div class="modal popup-box fade" id="exampleModal" tabindex="-1" aria-hidden="true">
-         <!-- make the id the same for modal container and the button that calling it (so changes will affect whatever object the user clicked instead of just the first object) -->
+      <div class="modal popup-box fade" id="photoModal" tabindex="-1" aria-hidden="true">
          <div class="modal-dialog popup-box-dialog modal-dialog-centered">
             <div class="modal-content popup-box-content">
-               <div class="popup-card" style="width:100%">
-                  <button type="button" class="btn popup2-btn  ms-auto" data-bs-dismiss="modal"><i
-                        class="fa-solid fa-xmark"></i></button>
-                  <img src="/assets/images/popup.png" class="card-img-top" alt="popup-bg">
-                  <div class="card-body popup-card-body">
-                     <div class="popup-title-area">
-                        <p class="popup-sub">Stay Organized</p>
-                        <h5 class="card-title popup-title">Manage all of your references</h5>
+               <form action="/post/<%= post._id %>/createRef" class="popup-form" enctype="multipart/form-data" method="POST">
+                  <h3>Upload Pictures</h3>
+                  <div class="row gy-3 mb-3">
+                     <div class="col-lg-6">
+                        <label for="exampleFormControlInput5" class="form-label">Image</label>
+                        <input type="file" class="form-control" id="exampleFormControlInput5" placeholder="New Image" name="file">
+                     </div>
+                     <div class="col-lg-6">
+                        <label for="exampleFormControlInput8" class="form-label">Tag</label>
+                        <select name="tag" class="form-control" id="exampleFormControlInput8">
+                           <option value="wigs"> Wigs</option>
+                           <option value="makeup"> Make-up</option>
+                           <option value="clothes"> Clothes</option>
+                           <option value="props"> Props</option>
+                           <option value="ref"> References</option>
+                           <option value="gallery"> Convention Photos</option>
+                        </select>
                      </div>
                   </div>
-                  <form action="/post/<%= post._id %>/createRef" class="popup-form" enctype="multipart/form-data"
-                     method="POST">
-                     <div class="row gy-3 mb-3">
-                        <h3>Upload Pictures</h3>
-                        <div class="col-lg-6">
-                           <label for="exampleFormControlInput5" class="form-label">Image</label>
-                           <input type="file" class="form-control" id="exampleFormControlInput5" placeholder="New Image"
-                              name="file">
-                        </div>
-
-                        <hr>
-                        <h3>Add Videos and Links</h3>
-                        <div class="col-lg-6">
-                           <label for="exampleFormControlInput6" class="form-label">Title</label>
-                           <input type="text" class="form-control" id="exampleFormControlInput6" placeholder="Title"
-                              name="title">
-                        </div>
-                        <div class="col-lg-6">
-                           <label for="exampleFormControlInput7" class="form-label">Caption</label>
-                           <input type="text" class="form-control" id="exampleFormControlInput7"
-                              placeholder="Add a caption" name="caption">
-                        </div>
-                     </div>
-
-                     <div class="col-lg-6">
-                        <label for="exampleFormControlInput6" class="form-label">Link</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput6" placeholder="Link"
-                           name="link">
-                     </div>
-
-                     <hr>
-                     <div class="container mt-4">
-                        <h3>Choose a Tag</h3>
-                        <div class="mb-3">
-                           <select name="tag">
-                              <option value selected>Select One...</option>
-                              <option value="wigs"> Wigs</option>
-                              <option value="makeup"> Make-up</option>
-                              <option value="clothes"> Clothes</option>
-                              <option value="props"> Props</option>
-                              <option value="ref"> References</option>
-                              <option value="gallery"> Convention Photos</option>
-                           </select>
-                        </div>
-
-                        <button class="custom-btn2" type="submit">Add</button>
-                  </form>
-
-               </div>
+                  <button class="custom-btn2" type="submit">Add</button>
+               </form>
             </div>
          </div>
       </div>
-   </div>
+      
+      <!-- Modal for title upload -->
+      <div class="modal popup-box fade" id="videoModal" tabindex="-1" aria-hidden="true">
+         <div class="modal-dialog popup-box-dialog modal-dialog-centered">
+            <div class="modal-content popup-box-content">
+               <form action="/post/<%= post._id %>/createRef" class="popup-form" enctype="multipart/form-data" method="POST">
+                  <h3>Add Videos and Links</h3>
+                  <div class="row gy-3 mb-3">
+                     <div class="col-lg-6">
+                        <label for="exampleFormControlInput6" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput6" placeholder="Title" name="title">
+                     </div>  
+                     <div class="col-lg-6">
+                        <label for="exampleFormControlInput9" class="form-label">Link</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput9" placeholder="Link" name="link">
+                     </div>
+                  </div>
+               
+                   
+                     <div class="col-lg-6">
+                        <label for="exampleFormControlInput10" class="form-label">Tag</label>
+                        <select name="tag" class="form-control" id="exampleFormControlInput10">
+                           <option value="wigs">Wigs</option>
+                           <option value="makeup">Make-up</option>
+                           <option value="clothes">Clothes</option>
+                           <option value="props">Props</option>
+                           <option value="ref">References</option>
+                           <option value="gallery">Convention Photos</option>
+                        </select>
+                     </div>
+              
+                     <hr>
+                  <button class="custom-btn2" type="submit">Add</button>
+               </form>
+            </div>
+         </div>
+      </div>
+   
+      <br>
 
    <!-- schedule sec start -->
    <section id="schedule" class="schedule-sec">
@@ -268,8 +253,12 @@
             </h2>
          </div>
 
-         <div class="card-button col-5">
-            <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">+ Inspo</button>
+
+         <div class="d-flex justify-content-center mt-5" >
+        
+            <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#photoModal" id = "refButton">+ Photo</button>
+            <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#videoModal" id = "refButton">+ Inspo</button>
+        
          </div>
 
          <div class="schedule-content-wrap">
@@ -310,7 +299,7 @@
 <!-- Modal -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
    <div class="modal-dialog modal-dialog-centered modal-lg">
-     <div class="modal-content" id = "modalview">
+     <div class="modal-content" id = "modalView">
        <div class="modal-body text-center">
          <div class="enlarged-image-container">
            <img id="enlargedImage" class="img-fluid" src="" alt="Enlarged Image">
@@ -323,8 +312,11 @@
             <div class="tab-content schedule-tab-content" id="pills-tabContent">
                <div class="tab-pane fade show active" id="pills-day-1" role="tabpanel" aria-labelledby="pills-day-1-tab"
                   tabindex="0">
-
+                <div class="section-head col-xl-9 m-auto text-center mb-5">
+                     <span class="label">Photos</span>
+                  </div>
                   <section id="speakers" class="speakers-gallery-sec position-relative">
+                      
                      <div class="container">
                         <div class="speakers-gallery-items-wrap">
                            <div class="row">
@@ -357,41 +349,68 @@
                         </div>
                      </div>
                   </section>
-
-                  <% for(var i=0; i<refs.length; i++) {%>
+                  <div class="section-head col-xl-9 m-auto text-center mb-5">
+                     <span class="label">Links</span>
+                  </div>
+                  <% for (var i = 0; i < refs.length; i++) { %>
                      <% if (!refs[i].image) { %>
-                        <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear"
-                           data-aos-duration="1000" style="background-image: url(/assets/images/banner/schedule1.png);">
-                           <div class="col-lg-4">
-                              <div class="d-flex align-items-center justify-content-around">
-                                 <div class="card-thumb item-thumb"></div>
-
+                       <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" style="background-image: url(/assets/images/banner/schedule1.png);">
+                        <div class="col-lg-4">
+                           <div class="d-flex align-items-center justify-content-around">
+                              <div class="card-thumb">
+                                 <% if (refs[i].tag === "clothes") { %>
+                                 <img src="/assets/images/clean-clothes.png" alt="Profile 1">
+                                 <% } %>
+                                 <% if (refs[i].tag === "wigs") { %>
+                                    <img src="/assets/images/wig2.png" alt="Profile 1">
+                                    <% } %>
+                                    <% if (refs[i].tag === "makeup") { %>
+                                       <img src="/assets/images/makeup.png" alt="Profile 1">
+                                       <% } %>
+                                       <% if (refs[i].tag === "props") { %>
+                                          <img src="/assets/images/props.png" alt="Profile 1">
+                                          <% } %>
+                                          <% if (refs[i].tag === "ref") { %>
+                                             <img src="/assets/images/gallery.png" alt="Profile 1">
+                                             <% } %>
+                                             <% if (refs[i].tag === "gallery") { %>
+                                                <img src="/assets/images/photo2.png" alt="Profile 1">
+                                                <% } %>
                               </div>
-                           </div>
-                           <div class="col-lg-8">
-                              <div class="d-flex align-items-center justify-content-between">
-                                 <div class="card-title-area col-7">
-                                    <h4 class="title">
-                                       <%= refs[i].title %>
-                                    </h4>
-                                    <p class="title-desc">
-                                       Link<a href="<%= refs[i].link %>" target="_blank">
-                                          <%= refs[i].link %>
-                                       </a>
-                                    </p>
-                                 </div>
-                                 <div class="card-button col-5">
-                                    <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
-                                       method="POST">
-                                       <a><button type="submit" class="custom-btn2"><i class="fa fa-trash"
-                                                aria-hidden="true"></i></button></a>
-                                    </form>
-                                 </div>
+                              <div class="card-description">
+                                 <span class="name d-block"><%= refs[i].tag.toUpperCase() %></span>
+                                 <span class="date d-block"><%= refs[i].title %></span>
                               </div>
                            </div>
                         </div>
-                        <% } %>
-                           <% } %>
+                         <div class="col-lg-8">
+                           <div class="d-flex align-items-center justify-content-between">
+                             <div class="card-title-area col-7">
+                             
+                               <p class="title-desc">
+                                 <a href="<%= refs[i].link %>" target="_blank">
+                                   <div class="bookmark">
+                                     <% var url = refs[i].link; %>
+                                     <div class="preview-image" data-url="<%= url %>"></div>
+                                     <span>Link</span>
+                                   </div>
+                                 </a>
+                               </p>
+                             </div>
+                             <div class="card-button col-5">
+                               <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE" method="POST">
+                                 <a>
+                                   <button type="submit" class="custom-btn2">
+                                     <i class="fa fa-trash" aria-hidden="true"></i>
+                                   </button>
+                                 </a>
+                               </form>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     <% } %>
+                   <% } %>
 
 
                </div>
@@ -400,9 +419,12 @@
 
                <div class="tab-pane fade" id="pills-day-2" role="tabpanel" aria-labelledby="pills-day-2-tab"
                   tabindex="0">
-
+                      <div class="section-head col-xl-9 m-auto text-center mb-5">
+                     <span class="label">Photos</span>
+                  </div>
                   <section id="speakers" class="speakers-gallery-sec position-relative">
-                     <div class="container">
+                 
+                  <div class="container">
                         <div class="speakers-gallery-items-wrap">
                            <div class="row">
                               <% for(var i=0; i<refs.length; i++) {%>
@@ -416,7 +438,7 @@
                                           </div>
                                           <ul class="social-icons social">
                                              <li>
-                                                <a href="#">View</a>
+                                                <a href="#" class="view-btn" data-image-url="<%= refs[i].image %>">View</a>
                                              </li>
                                              <li>
                                                 <form
@@ -436,35 +458,54 @@
                      </div>
                   </section>
 
-
-                  <div class="row schedule-item" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule2.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile2.png" alt="Profile 2">
-                           </div>
-                           <div class="card-description">
-                              <a><span class="name d-block">Links</span></a>
-
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class="d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Sessions and Labs</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-buttoncol-5">
-                              <button class="custom-btn2" data-bs-toggle="modal"
-                                 data-bs-target="#exampleModal">Delete</button>
-                           </div>
-                        </div>
-                     </div>
+                  <div class="section-head col-xl-9 m-auto text-center mb-5">
+                     <span class="label">Links</span>
                   </div>
-
+                  <% for (var i = 0; i < refs.length; i++) { %>
+                     <% if (!refs[i].image && refs[i].tag === "wigs") { %>
+                       <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" style="background-image: url(/assets/images/banner/schedule1.png);">
+                         <div class="col-lg-4">
+                           <div class="d-flex align-items-center justify-content-around">
+                             <div class="card-thumb">
+                               <img src="/assets/images/wig2.png" alt="Profile 1">
+                             </div>
+                             <div class="card-description">
+                               <span class="name d-block"><%= refs[i].tag.toUpperCase() %></span>
+                               <span class="date d-block"><%= refs[i].title %></span>
+                             
+                             </div>
+                           </div>
+                         </div>
+                         <div class="col-lg-8">
+                           <div class="d-flex align-items-center justify-content-between">
+                             <div class="card-title-area col-7">
+                               <h4 class="title">
+                                 <%= refs[i].title %>
+                               </h4>
+                               <p class="title-desc">
+                                 <a href="<%= refs[i].link %>" target="_blank">
+                                   <div class="bookmark">
+                                     <% var url = refs[i].link; %>
+                                     <div class="preview-image" data-url="<%= url %>"></div>
+                                     <span>Link</span>
+                                   </div>
+                                 </a>
+                               </p>
+                             </div>
+                             <div class="card-button col-5">
+                               <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE" method="POST">
+                                 <a>
+                                   <button type="submit" class="custom-btn2">
+                                     <i class="fa fa-trash" aria-hidden="true"></i>
+                                   </button>
+                                 </a>
+                               </form>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     <% } %>
+                   <% } %>
 
                </div>
 
@@ -472,7 +513,10 @@
 
                <div class="tab-pane fade" id="pills-day-3" role="tabpanel" aria-labelledby="pills-day-3-tab"
                   tabindex="0">
-
+                  <div class="section-head col-xl-9 m-auto text-center mb-5">
+                     <span class="label">Photos</span>
+                  </div>
+                
                   <section id="speakers" class="speakers-gallery-sec position-relative">
                      <div class="container">
                         <div class="speakers-gallery-items-wrap">
@@ -488,7 +532,7 @@
                                           </div>
                                           <ul class="social-icons social">
                                              <li>
-                                                <a href="#">View</a>
+                                                 <a href="#" class="view-btn" data-image-url="<%= refs[i].image %>">View</a>
                                              </li>
                                              <li>
                                                 <form
@@ -507,35 +551,55 @@
                         </div>
                      </div>
                   </section>
-
-                  <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule1.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile3.png" alt="Profile 3">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Monica Smith</span>
-                              <span class="date d-block">October 2, 2023</span>
-                              <span class="time d-block">10:00 - 10:45</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Events and Networking</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
+                  <div class="section-head col-xl-9 m-auto text-center mb-5">
+                     <span class="label">Links</span>
                   </div>
+                  <% for (var i = 0; i < refs.length; i++) { %>
+                     <% if (!refs[i].image && refs[i].tag === "makeup") { %>
+                       <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" style="background-image: url(/assets/images/banner/schedule1.png);">
+                        <div class="col-lg-4">
+                           <div class="d-flex align-items-center justify-content-around">
+                              <div class="card-thumb">
+                                       <img src="/assets/images/makeup.png" alt="Profile 1">
+                              </div>
+                              <div class="card-description">
+                                 <span class="name d-block"><%= refs[i].tag.toUpperCase() %></span>
+                                 <span class="date d-block"><%= refs[i].title %></span>
+                                
+                              </div>
+                           </div>
+                        </div>
+                         <div class="col-lg-8">
+                           <div class="d-flex align-items-center justify-content-between">
+                             <div class="card-title-area col-7">
+                               <h4 class="title">
+                                 <%= refs[i].title %>
+                               </h4>
+                               <p class="title-desc">
+                                 <a href="<%= refs[i].link %>" target="_blank">
+                                   <div class="bookmark">
+                                     <% var url = refs[i].link; %>
+                                     <div class="preview-image" data-url="<%= url %>"></div>
+                                     <span>Link</span>
+                                   </div>
+                                 </a>
+                               </p>
+                             </div>
+                             <div class="card-button col-5">
+                               <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE" method="POST">
+                                 <a>
+                                   <button type="submit" class="custom-btn2">
+                                     <i class="fa fa-trash" aria-hidden="true"></i>
+                                   </button>
+                                 </a>
+                               </form>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     <% } %>
+                   <% } %>
+
 
                </div>
 
@@ -543,7 +607,9 @@
 
                <div class="tab-pane fade" id="pills-day-4" role="tabpanel" aria-labelledby="pills-day-4-tab"
                   tabindex="0">
-
+                  <div class="section-head col-xl-9 m-auto text-center mb-5">
+                     <span class="label">Photos</span>
+                  </div>
                   <section id="speakers" class="speakers-gallery-sec position-relative">
                      <div class="container">
                         <div class="speakers-gallery-items-wrap">
@@ -559,7 +625,7 @@
                                           </div>
                                           <ul class="social-icons social">
                                              <li>
-                                                <a href="#">View</a>
+                                                 <a href="#" class="view-btn" data-image-url="<%= refs[i].image %>">View</a>
                                              </li>
                                              <li>
                                                 <form
@@ -579,45 +645,65 @@
                      </div>
                   </section>
 
-
-
-                  <div class="row schedule-item" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule2.png);">
-
-
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile4.png" alt="Profile 4">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Vincent Smith</span>
-                              <span class="date d-block">October2,2023</span>
-                              <span class="time d-block">12:00 - 12:45</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Luminary Sessions</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
+                  <div class="section-head col-xl-9 m-auto text-center mb-5">
+                     <span class="label">Links</span>
                   </div>
+                  <% for (var i = 0; i < refs.length; i++) { %>
+                     <% if (!refs[i].image && refs[i].tag === "clothes") { %>
+                       <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" style="background-image: url(/assets/images/banner/schedule1.png);">
+                        <div class="col-lg-4">
+                           <div class="d-flex align-items-center justify-content-around">
+                              <div class="card-thumb">
+                                       <img src="/assets/images/clean-clothes.png" alt="Profile 1">
+                                    
+                              </div>
+                              <div class="card-description">
+                                 <span class="name d-block"><%= refs[i].tag.toUpperCase() %></span>
+                                 <span class="date d-block"><%= refs[i].title %></span>
+                               
+                              </div>
+                           </div>
+                        </div>
+                         <div class="col-lg-8">
+                           <div class="d-flex align-items-center justify-content-between">
+                             <div class="card-title-area col-7">
+                               <h4 class="title">
+                                 <%= refs[i].title %>
+                               </h4>
+                               <p class="title-desc">
+                                 <a href="<%= refs[i].link %>" target="_blank">
+                                   <div class="bookmark">
+                                     <% var url = refs[i].link; %>
+                                     <div class="preview-image" data-url="<%= url %>"></div>
+                                     <span>Link</span>
+                                   </div>
+                                 </a>
+                               </p>
+                             </div>
+                             <div class="card-button col-5">
+                               <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE" method="POST">
+                                 <a>
+                                   <button type="submit" class="custom-btn2">
+                                     <i class="fa fa-trash" aria-hidden="true"></i>
+                                   </button>
+                                 </a>
+                               </form>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     <% } %>
+                   <% } %>
+
 
                </div>
 
                <!-- props -->
                <div class="tab-pane fade" id="pills-day-5" role="tabpanel" aria-labelledby="pills-day-5-tab"
                   tabindex="0">
-
+                  <div class="section-head col-xl-9 m-auto text-center mb-5">
+                     <span class="label">Photos</span>
+                  </div>
                   <section id="speakers" class="speakers-gallery-sec position-relative">
                      <div class="container">
                         <div class="speakers-gallery-items-wrap">
@@ -633,7 +719,7 @@
                                           </div>
                                           <ul class="social-icons social">
                                              <li>
-                                                <a href="#">View</a>
+                                                 <a href="#" class="view-btn" data-image-url="<%= refs[i].image %>">View</a>
                                              </li>
                                              <li>
                                                 <form
@@ -652,41 +738,67 @@
                         </div>
                      </div>
                   </section>
-                  <div class="row schedule-item" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule2.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile4.png" alt="Profile 4">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Vincent Smith</span>
-                              <span class="date d-block">October2,2023</span>
-                              <span class="time d-block">12:00 - 12:45</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Luminary Sessions</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
+
+                  <div class="section-head col-xl-9 m-auto text-center mb-5">
+                     <span class="label">Links</span>
                   </div>
+                  <% for (var i = 0; i < refs.length; i++) { %>
+                     <% if (!refs[i].image && refs[i].tag === "props") { %>
+                       <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" style="background-image: url(/assets/images/banner/schedule1.png);">
+                        <div class="col-lg-4">
+                           <div class="d-flex align-items-center justify-content-around">
+                              <div class="card-thumb">
+                                          <img src="/assets/images/props.png" alt="Profile 1">
+                                      
+                              </div>
+                              <div class="card-description">
+                                 <span class="name d-block"><%= refs[i].tag.toUpperCase() %></span>
+                                 <span class="date d-block"><%= refs[i].title %></span>
+                               
+                              </div>
+                           </div>
+                        </div>
+                         <div class="col-lg-8">
+                           <div class="d-flex align-items-center justify-content-between">
+                             <div class="card-title-area col-7">
+                               <h4 class="title">
+                                 <%= refs[i].title %>
+                               </h4>
+                               <p class="title-desc">
+                                 <a href="<%= refs[i].link %>" target="_blank">
+                                   <div class="bookmark">
+                                     <% var url = refs[i].link; %>
+                                     <div class="preview-image" data-url="<%= url %>"></div>
+                                     <span>Link</span>
+                                   </div>
+                                 </a>
+                               </p>
+                             </div>
+                             <div class="card-button col-5">
+                               <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE" method="POST">
+                                 <a>
+                                   <button type="submit" class="custom-btn2">
+                                     <i class="fa fa-trash" aria-hidden="true"></i>
+                                   </button>
+                                 </a>
+                               </form>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     <% } %>
+                   <% } %>
+
+
 
                </div>
 
                <!-- references -->
                <div class="tab-pane fade" id="pills-day-6" role="tabpanel" aria-labelledby="pills-day-6-tab"
                   tabindex="0">
-
+                  <div class="section-head col-xl-9 m-auto text-center mb-5">
+                     <span class="label">Photos</span>
+                  </div>
                   <section id="speakers" class="speakers-gallery-sec position-relative">
                      <div class="container">
                         <div class="speakers-gallery-items-wrap">
@@ -702,7 +814,7 @@
                                           </div>
                                           <ul class="social-icons social">
                                              <li>
-                                                <a href="#">View</a>
+                                                 <a href="#" class="view-btn" data-image-url="<%= refs[i].image %>">View</a>
                                              </li>
                                              <li>
                                                 <form
@@ -721,36 +833,55 @@
                         </div>
                      </div>
                   </section>
-
-
-                  <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule1.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile1.png" alt="Profile 1">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Stella Smith</span>
-                              <span class="date d-block">October2,2023</span>
-                              <span class="time d-block">08:00 - 08:45</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Presentation and Keynotes</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
+                  <div class="section-head col-xl-9 m-auto text-center mb-5">
+                     <span class="label">Links</span>
                   </div>
+                  <% for (var i = 0; i < refs.length; i++) { %>
+                     <% if (!refs[i].image && refs[i].tag === "ref") { %>
+                       <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" style="background-image: url(/assets/images/banner/schedule1.png);">
+                        <div class="col-lg-4">
+                           <div class="d-flex align-items-center justify-content-around">
+                              <div class="card-thumb">
+                                          <img src="/assets/images/gallery.png" alt="Profile 1">
+                                      
+                              </div>
+                              <div class="card-description">
+                                 <span class="name d-block"><%= refs[i].tag.toUpperCase() %></span>
+                                 <span class="date d-block"><%= refs[i].title %></span>
+                               
+                              </div>
+                           </div>
+                        </div>
+                         <div class="col-lg-8">
+                           <div class="d-flex align-items-center justify-content-between">
+                             <div class="card-title-area col-7">
+                               <h4 class="title">
+                                 <%= refs[i].title %>
+                               </h4>
+                               <p class="title-desc">
+                                 <a href="<%= refs[i].link %>" target="_blank">
+                                   <div class="bookmark">
+                                     <% var url = refs[i].link; %>
+                                     <div class="preview-image" data-url="<%= url %>"></div>
+                                     <span>Link</span>
+                                   </div>
+                                 </a>
+                               </p>
+                             </div>
+                             <div class="card-button col-5">
+                               <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE" method="POST">
+                                 <a>
+                                   <button type="submit" class="custom-btn2">
+                                     <i class="fa fa-trash" aria-hidden="true"></i>
+                                   </button>
+                                 </a>
+                               </form>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     <% } %>
+                   <% } %>
 
 
 
@@ -759,7 +890,9 @@
                <!-- Con photos -->
                <div class="tab-pane fade" id="pills-day-7" role="tabpanel" aria-labelledby="pills-day-7-tab"
                   tabindex="0">
-
+                  <div class="section-head col-xl-9 m-auto text-center mb-5">
+                     <span class="label">Photos</span>
+                  </div>
                   <section id="speakers" class="speakers-gallery-sec position-relative">
                      <div class="container">
                         <div class="speakers-gallery-items-wrap">
@@ -775,7 +908,7 @@
                                           </div>
                                           <ul class="social-icons social">
                                              <li>
-                                                <a href="#">View</a>
+                                                 <a href="#" class="view-btn" data-image-url="<%= refs[i].image %>">View</a>
                                              </li>
                                              <li>
                                                 <form
@@ -789,40 +922,62 @@
                                        </div>
                                     </div>
                                     <% } %>
-                                       <% } %>
+                                 <% } %>
                            </div>
                         </div>
                      </div>
                   </section>
 
-                  <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000"
-                     style="background-image: url(/assets/images/banner/schedule1.png);">
-                     <div class="col-lg-4">
-                        <div class="d-flex align-items-center justify-content-around">
-                           <div class="card-thumb">
-                              <img src="/assets/images/profile3.png" alt="Profile 3">
-                           </div>
-                           <div class="card-description">
-                              <span class="name d-block">Monica Smith</span>
-                              <span class="date d-block">October 2, 2023</span>
-                              <span class="time d-block">10:00 - 10:45</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-lg-8">
-                        <div class=" d-flex align-items-center justify-content-between">
-                           <div class="card-title-area col-7">
-                              <h4 class="title">Events and Networking</h4>
-                              <p class="title-desc">Discover the latest trends in creativity and get inspired by
-                                 creative leaders.<a href="#">Read More</a></p>
-                           </div>
-                           <div class="card-button col-5">
-                              <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy
-                                 Tickets</button>
-                           </div>
-                        </div>
-                     </div>
+                  <div class="section-head col-xl-9 m-auto text-center mb-5">
+                     <span class="label">Links</span>
                   </div>
+                  
+                  <% for (var i = 0; i < refs.length; i++) { %>
+                     <% if (!refs[i].image && refs[i].tag=== "gallery") { %>
+                       <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" style="background-image: url(/assets/images/banner/schedule1.png);">
+                        <div class="col-lg-4">
+                           <div class="d-flex align-items-center justify-content-around">
+                              <div class="card-thumb">
+                              <img src="/assets/images/photo2.png" alt="Profile 1">      
+                              </div>
+                        
+                              <div class="card-description">
+                                 <span class="name d-block"><%= refs[i].tag.toUpperCase() %></span>
+                                 <span class="date d-block"><%= refs[i].title %></span>
+                              </div>
+                           </div>
+                        </div>
+                         <div class="col-lg-8">
+                           <div class="d-flex align-items-center justify-content-between">
+                             <div class="card-title-area col-7">
+                               <h4 class="title">
+                                 <%= refs[i].title %>
+                               </h4>
+                               <p class="title-desc">
+                                 <a href="<%= refs[i].link %>" target="_blank">
+                                   <div class="bookmark">
+                                     <% var url = refs[i].link; %>
+                                     <div class="preview-image" data-url="<%= url %>"></div>
+                                     <span>Link</span>
+                                   </div>
+                                 </a>
+                               </p>
+                             </div>
+                             <div class="card-button col-5">
+                               <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE" method="POST">
+                                 <a>
+                                   <button type="submit" class="custom-btn2">
+                                     <i class="fa fa-trash" aria-hidden="true"></i>
+                                   </button>
+                                 </a>
+                               </form>
+                             </div>
+                           </div>
+                         </div>
+                       </div>
+                     <% } %>
+                   <% } %>
+
 
 
 

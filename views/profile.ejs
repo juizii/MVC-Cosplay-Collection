@@ -3,25 +3,26 @@
    <!-- info sec start -->
    <div class="info-sec">
       <div class="container">
+        <div class="info-countdown" style="background-image: url(assets/images/banner/bg.png);">
+          <div class="section-head col-xl-9 m-auto text-center mb-5">
+            <span class="label" id="countdown">Start the Countdown</span>
+          </div>
+          <form id="countdown" action="/profile/countdown" method="POST">
+            <label for="countdown-date" class="title">Enter the date for your next con: </label>
+            <input type="date" id="countdown-date" name="countdownDate" required>
+            <ul class="counter-box d-flex justify-content-around" data-countdown="">
+            </ul>
+            <button type="button" id="countdown-submit">Set Countdown</button>
+          </form>
+          
+       
 
-         <div class="info-countdown" style="background-image: url(assets/images/banner/bg.png);">
-            <div class="section-head col-xl-9 m-auto text-center mb-5">
-               <span class="label" id="countdown">Start the Countdown</span>
-            </div>
-            <form id="countdown">
-               <label for="countdown-date" class="title">Enter the date for your next con: </label>
-               <input type="date" id="countdown-date" name="countdown-date" required>
-               <ul class="counter-box d-flex justify-content-around" data-countdown="">
-               </ul>
-            </form>
-
-            <div class="dots img-moving-anim2">
-               <img src="assets/images/dots/dots3.png" alt="Shadow Image">
-            </div>
-         </div>
-
+          <div class="dots img-moving-anim2">
+            <img src="assets/images/dots/dots3.png" alt="Shadow Image">
+          </div>
+        </div>
       </div>
-   </div>
+    </div>
    <!-- info sec end -->
 
    <!-- about sec start -->
@@ -252,7 +253,7 @@ Introducing Cosplay Collection, the ultimate app for organizing and enhancing yo
                         <div class="dots img-moving-anim3">
                            <img src="/assets/images/dots/dots7.png" alt="Shadow Image">
                         </div>
-                        <button class="custom-btn2 video-btn">Resister Now</button>
+                        <button class="custom-btn2 video-btn">Register Now</button>
                      </div>
                   </div>
                </div>
