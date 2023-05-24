@@ -65,7 +65,8 @@ module.exports = {
           cloudinaryId: result.public_id,
           link: "",
           user: req.user.id,
-          postId: postId, // Assign the postId to the created ref
+          // Assign the postId to the created ref
+          postId: postId, 
           tag: req.body.tag,
         });
       } else {
@@ -76,7 +77,8 @@ module.exports = {
           cloudinaryId: "",
           link: req.body.link,
           user: req.user.id,
-          postId: postId, // Assign the postId to the created ref
+          // Assign the postId to the created ref
+          postId: postId, 
           tag: req.body.tag,
         });
       }
