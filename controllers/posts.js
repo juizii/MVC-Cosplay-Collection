@@ -21,14 +21,6 @@ module.exports = {
       console.log(err);
     }
   },
-  getFeed: async (req, res) => {
-    try {
-      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
-      res.render("feed.ejs", { posts: posts });
-    } catch (err) {
-      console.log(err);
-    }
-  },
   getPost: async (req, res) => {
     try {
       const postId = req.params.id;
@@ -57,7 +49,7 @@ module.exports = {
         user: req.user.id,
       });
       console.log("Post has been added!");
-      res.redirect("/profile");
+      res.redirect("/profile#speakers");
     } catch (err) {
       console.log(err);
     }
