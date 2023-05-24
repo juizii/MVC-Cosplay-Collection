@@ -2698,3 +2698,11 @@ hr {
 #space{
   margin-top:50px;
 }
+
+#countdown-date{
+  border-radius: 10px;
+  width: 30%;
+  padding: 10px;
+  margin-bottom:20px;
+}
+

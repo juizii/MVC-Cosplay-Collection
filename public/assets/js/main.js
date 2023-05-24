@@ -86,8 +86,11 @@ async function getCountdownDate() {
   }
 }
 
-// Function to initialize the countdown with the retrieved date
+// Function to initialize the countdown with the retrieved date or default to 0
 function initializeCountdown(countdownDate) {
+  var countdownUl = document.querySelector(".counter-box");
+  countdownUl.setAttribute("data-countdown", countdownDate || '');
+
   $('.counter-box[data-countdown]').countdown(countdownDate, function(event) {
     $(this).html(event.strftime(''
       + '<li class="days"><strong class="day2">%D</strong><span class="d-block">Days</span></li>'
@@ -99,6 +102,8 @@ function initializeCountdown(countdownDate) {
     alert("Today's the Day!");
   });
 }
+
+
 
 // Function to save the countdown date to local storage
 function saveCountdownDateToLocal(countdownDate) {
@@ -157,35 +162,6 @@ getCountdownDate().then(function(countdownDate) {
     initializeCountdown(countdownDate);
   }
 });
-
-async function resetCountdown() {
-  try {
-    // Clear the countdown date from local storage
-    localStorage.removeItem("countdownDate");
-    
-    // Delete the countdown date from the server
-    const response = await fetch("/profile/countdown", {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    });
-    
-    if (!response.ok) {
-      throw new Error("Failed to delete countdown date");
-    }
-    
-    // Refresh the page
-    window.location.reload();
-  } catch (error) {
-    console.error("Error resetting countdown:", error);
-  }
-}
-
-// Event listener for reset button click
-var resetButton = document.getElementById("countdown-reset");
-
-resetButton.addEventListener("click", resetCountdown);
 
       
   $(document).on( 'click', '.mode', function(e){

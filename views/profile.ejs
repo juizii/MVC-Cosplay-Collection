@@ -3,26 +3,31 @@
    <!-- info sec start -->
    <div class="info-sec">
       <div class="container">
-        <div class="info-countdown" style="background-image: url(assets/images/banner/bg.png);">
-          <div class="section-head col-xl-9 m-auto text-center mb-5">
-            <span class="label" id="countdown">Start the Countdown</span>
-          </div>
-          <form id="countdown" action="/countdown" method="POST">
-            <label for="countdown-date" class="title">Enter the date for your next con: </label>
-            <input type="date" id="countdown-date" name="countdownDate" required>
-            <ul class="counter-box d-flex justify-content-around" data-countdown=""></ul>
-            <button type="submit" id="countdown-submit">Set Countdown</button>
-            <button type="button" id="countdown-reset">Reset Countdown</button>
-          </form>
-          
-       
+         <div class="info-countdown" style="background-image: url(assets/images/banner/bg.png);">
+            <div class="section-head col-xl-9 m-auto text-center mb-5">
+               <span class="label" id="countdown">Start the Countdown</span>
+               <h2 class="title">When's your next convention? Keep yourself accountable and set an alarm for the upcoming date.</h2>
+             
+            </div>
+            <div class="section-head col-xl-9 m-auto text-center mb-5">
+               <form id="countdown" action="/profile/countdown" method="POST" >
+                  <input type="date" id="countdown-date" name="countdownDate class="form-control" required>
+                  <button class="custom-btn custom-btn2" type="submit" id="countdown-submit">Set/Stop</button>
+                  <ul class="counter-box d-flex justify-content-around" data-countdown="">  <li class="days"><strong class="day2">00</strong><span class="d-block">Days</span></li>
+                     <li class="hours"><strong class="hours2">00</strong><span class="d-block">Hours</span></li>
+                     <li class="minutes"><strong class="min2">00</strong><span class="d-block">Minutes</span></li>
+                     <li class="seconds"><strong class="sec2">00</strong><span class="d-block">Seconds</span></li></ul>
+                
+               </form>
+            </div>
 
-          <div class="dots img-moving-anim2">
-            <img src="assets/images/dots/dots3.png" alt="Shadow Image">
-          </div>
-        </div>
+
+            <div class="dots img-moving-anim2">
+               <img src="assets/images/dots/dots3.png" alt="Shadow Image">
+            </div>
+         </div>
       </div>
-    </div>
+   </div>
    <!-- info sec end -->
 
    <!-- about sec start -->
@@ -38,13 +43,19 @@
                Introduction to the App
             </h1>
             <p class="desc mx-3">
-              
-Introducing Cosplay Collection, the ultimate app for organizing and enhancing your cosplay experience. With Cosplay Collection, you can store and manage all your upcoming cosplays while keeping track of essential references to ensure the utmost accuracy in your creations. Seamlessly upload photo references, links, and convention snapshots, all neatly organized for easy access. Embrace your cosplay passion like never before, with Cosplay Collection by your side. Say goodbye to forgotten cosplans and elevate your cosplay endeavors to new heights!
+
+               Introducing Cosplay Collection, the ultimate app for organizing and enhancing your cosplay experience.
+               With Cosplay Collection, you can store and manage all your upcoming cosplays while keeping track of
+               essential references to ensure the utmost accuracy in your creations. Seamlessly upload photo references,
+               links, and convention snapshots, all neatly organized for easy access. Embrace your cosplay passion like
+               never before, with Cosplay Collection by your side. Say goodbye to forgotten cosplans and elevate your
+               cosplay endeavors to new heights!
             </p>
             <p class="desc mx-3">
                Brought to you by Joyce Zhang, a software developer from Resilient Coders and an avid lover of arts and
                this craft. Made to make every cosplayer's con prep just a little easier.
             </p>
+            
 
          </div>
    </section>
@@ -59,7 +70,7 @@ Introducing Cosplay Collection, the ultimate app for organizing and enhancing yo
    <section id="speakers" class="speakers-gallery-sec position-relative">
       <div class="container">
          <div class="section-head col-xl-8 m-auto text-center mb-5">
-            <span class="label" id ="space">Create a new Character Project</span>
+            <span class="label" id="space">Create a new Character Project</span>
             <h2 class="title">
                Here is where you can add your next character to list of cosplays.
             </h2>
@@ -68,9 +79,9 @@ Introducing Cosplay Collection, the ultimate app for organizing and enhancing yo
          <div class="d-flex justify-content-center mt-5">
             <button class="custom-btn custom-btn2" value="Upload" data-bs-toggle="modal" data-bs-target="#addChara">+
                Character</button>
-            </div>
+         </div>
 
-            <br>
+         <br>
 
          <div class="speakers-gallery-items-wrap">
 
@@ -124,7 +135,7 @@ Introducing Cosplay Collection, the ultimate app for organizing and enhancing yo
          </div>
          <div>
 
-         
+
 
          </div>
          <div class="shape">
@@ -166,7 +177,7 @@ Introducing Cosplay Collection, the ultimate app for organizing and enhancing yo
              <iframe width="100%" height="400" src="https://www.youtube.com/embed/1dtzSRlfBDk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div> -->
 
- 
+
 
 
    <!-- Modal for Editing Posts -->
@@ -195,17 +206,17 @@ Introducing Cosplay Collection, the ultimate app for organizing and enhancing yo
                            <input type="file" class="form-control" id="exampleFormControlInput5" placeholder="New Image"
                               name="image" value="<%= posts[i].image %>">
                         </div>
-                           <!-- value is the current text the object has in the db, just so the user knows what it says. -->
-                           <div class="col-lg-6">
-                              <label for="exampleFormControlInput6" class="form-label">Name</label>
-                              <input type="text" class="form-control" id="exampleFormControlInput6"
-                                 placeholder="New Name" name="title" value="<%= posts[i].title %>">
-                           </div>
-                           <div class="col-lg-6">
-                              <label for="exampleFormControlInput7" class="form-label">Media</label>
-                              <input type="text" class="form-control" id="exampleFormControlInput7"
-                                 placeholder="New Media" name="media" value="<%= posts[i].media %>">
-                           </div>
+                        <!-- value is the current text the object has in the db, just so the user knows what it says. -->
+                        <div class="col-lg-6">
+                           <label for="exampleFormControlInput6" class="form-label">Name</label>
+                           <input type="text" class="form-control" id="exampleFormControlInput6" placeholder="New Name"
+                              name="title" value="<%= posts[i].title %>">
+                        </div>
+                        <div class="col-lg-6">
+                           <label for="exampleFormControlInput7" class="form-label">Media</label>
+                           <input type="text" class="form-control" id="exampleFormControlInput7" placeholder="New Media"
+                              name="media" value="<%= posts[i].media %>">
+                        </div>
                         <button class="custom-btn2" type="submit">Save Changes</button>
                      </div>
                   </form>
@@ -238,10 +249,12 @@ Introducing Cosplay Collection, the ultimate app for organizing and enhancing yo
                   <div class="col-lg-6">
                      <div class="video-content-wrap">
                         <h2 class="title">
-                         Cosplaying is a fun activity but please practice good cosplay etiquette
+                           Cosplaying is a fun activity but please practice good cosplay etiquette
                         </h2>
                         <p class="desc">
-                         Remember cosplay is NOT consent. Dressing up as someone's favorite character does not give them the right to be overly-friendly or touch you, and vice versa. Make boundaries and stay safe.
+                           Remember cosplay is NOT consent. Dressing up as someone's favorite character does not give
+                           them the right to be overly-friendly or touch you, and vice versa. Make boundaries and stay
+                           safe.
                            <br><br>
                            Join us in person or attend virtually for free. Register now, in-person attendance is
                            limited.
