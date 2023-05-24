@@ -4,6 +4,12 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link
+   rel="icon"
+   type="image/png"
+   sizes="32x32"
+   href="/imgs/favicon-32x32.png"
+ />
    <title>Cosplay Collection</title>
    
    <!-- google font -->
@@ -31,7 +37,7 @@
    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
    
    <!-- css -->
-   <link rel="stylesheet" href="assets/css/style.css">
+   <link rel="stylesheet" href="assets/css/style3.css">
 
 	<!-- Color switch Alternatives -->
    <link rel="stylesheet" type="text/css" href="color-switch/css/switch.css">
@@ -68,25 +74,15 @@
       <header class="header-area">
          <nav class="header-nav navbar fixed-top navbar-expand-lg position-absolute w-100">
             <div class="container header-nav-menu">
-               <a class="navbar-brand" href="/profile">
-                  <img src="assets/images/cosplay/logo.png" alt="Header Logo">
+               <a class="navbar-brand" href="/">
+                  <img src="/assets/images/cosplay/logo.png" alt="Header Logo">
                </a>
               
-               <div class="collapse navbar-collapse d-none d-lg-block">
-                 
-                  <div class="mode-and-button d-flex align-items-center">
-                   
-                     <a href= "/login"><button class="header-btn custom-btn2">Login</button></a>
-                  </div>
-               </div>
+             
 
                <!-- mobile menu -->
                <div class="mobile-view-header d-block d-lg-none d-flex gap-3 align-items-center">
-                  <div class="mode me-md-3">
-                     <img src="assets/images/icon/sun.svg" alt="Sun" class="fa-sun" style="display: none;">
-                     <img src="assets/images/icon/moon.svg" alt="Moon" class="fa-moon">
-                  </div>
-                  <button class="header-btn custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Tickets</button>
+                 
 
                   <a class="border rounded-1 py-1 px-2 bg-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                      <span class="navbar-toggler-icon nav-toggler-icon"></span>
@@ -94,18 +90,31 @@
 
                   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" >
                      <div class="offcanvas-header">
-                        <a class="navbar-brand" href="index.html">
-                           <img src="assets/images/cosplay/logo.png" alt="Header Logo">
+                        <a class="navbar-brand" href="/">
+                           <img src="/assets/images/cosplay/logo.png" alt="Header Logo">
                         </a>
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                      </div>
-                   
+                     <div class="offcanvas-body">
+                        <div class="dropdown mt-3">
+                           <ul class="navbar-nav m-auto">
+                            
+                              <li class="nav-item">
+                                 <a href="/login" class="nav-link py-3">Login</a>
+                              </li>
+                            
+                           </ul>
+                        </div>
+                     </div>
                   </div>
                </div>
                <!-- end mobile menu -->
 
             </div>
          </nav>
+
+      </header>
+         
     <main class="container">
         <div class="row justify-content-center">
             <section class="col-6 mt-5">
@@ -137,7 +146,8 @@
                         <label for="confirmPassword" class="form-label">Confirm Password</label>
                         <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
                       </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                      <button type ="submit" class="header-btn custom-btn2">Submit</button>
+                      <p class ="label"> Already have an account? login <a href= "/login">here</a></p>
                   </form>
             </section>
         </div>
