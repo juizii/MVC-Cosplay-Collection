@@ -165,7 +165,7 @@ getCountdownDate().then(function(countdownDate) {
 
       
   $(document).on( 'click', '.mode', function(e){
-    e.preventDefault;
+    e.preventDefault();
     if($('body').hasClass('dark-version')) {
         $('body').removeClass('dark-version');
         $('.mode .fa-moon').show();

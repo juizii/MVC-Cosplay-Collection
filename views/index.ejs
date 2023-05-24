@@ -71,20 +71,10 @@
                   <img src="assets/images/cosplay/logo.png" alt="Header Logo">
                </a>
               
-               <div class="right">
-                  
-                  <div class="mode-and-button d-flex align-items-right">
-                     <a href="/login" class="login"><button class="header-btn custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button></a>
-                  </div>
-               </div>
+            
 
                <!-- mobile menu -->
                <div class="mobile-view-header d-block d-lg-none d-flex gap-3 align-items-center">
-                  <div class="mode me-md-3">
-                     <img src="assets/images/icon/sun.svg" alt="Sun" class="fa-sun" style="display: none;">
-                     <img src="assets/images/icon/moon.svg" alt="Moon" class="fa-moon">
-                  </div>
-                  <button class="header-btn custom-btn2" data-bs-toggle="modal" data-bs-target="#exampleModal">Sign Up</button>
 
                   <a class="border rounded-1 py-1 px-2 bg-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                      <span class="navbar-toggler-icon nav-toggler-icon"></span>
@@ -92,7 +82,7 @@
 
                   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" >
                      <div class="offcanvas-header">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="/">
                            <img src="assets/images/cosplay/logo.png" alt="Header Logo">
                         </a>
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -100,35 +90,12 @@
                      <div class="offcanvas-body">
                         <div class="dropdown mt-3">
                            <ul class="navbar-nav m-auto">
+                             
                               <li class="nav-item">
-                                 <a href="/" class="nav-link py-3">Homepages</a>
-                                 <div class="drop-down">
-                                    <div class="row drop-down-wrap g-0">
-                                       <div class="col-7">
-                                         
-                                       </div>
-                                       <div class="col-5">
-                                          <div class="dropdown-thumb position-relative" style="background-image: url(assets/images/banner/home-conference-dropdown-bg.jpg);">
-                                             <span class="dropdown-sub position-absolute">Register Now</span>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
+                                 <a href="/login" class="nav-link py-3">Login</a>
                               </li>
                               <li class="nav-item">
-                                 <a href="#about" class="nav-link py-3">About</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a href="#schedule" class="nav-link py-3">Schedule</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a href="#sponsors" class="nav-link py-3">Sponsors</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a href="#speakers" class="nav-link py-3">Speakers</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a href="#pricing" class="nav-link py-3">Pricing</a>
+                                 <a href="/signup" class="nav-link py-3">Sign Up</a>
                               </li>
                            </ul>
                         </div>
@@ -140,8 +107,9 @@
             </div>
          </nav>
          
+         
          <!-- hero sec start -->
-         <section class="hero-sec"  style="background-image: url(assets/images/banner/group.png);">
+         <section class="hero-sec"  style="background-image: url(/assets/images/banner/group.png);">
             <div class="hero-slider-wrap">
                
                <div class="hero-slider-item overflow-hidden">
@@ -157,21 +125,21 @@
                                     Keep track of what you need done before your next con.
                                  </p>
                                  <div class="button-group">
-                                    <a href ="/login"><button class="custom-btn2">Sign In</button></a>
+                                    <a href ="/login"><button class="custom-btn2">Login</button></a>
                                  </div>
-                                 <img src="assets/images/dots/dots.png" alt="Shadow Image" class="dots-1 opacity-50 img-moving-anim2">
+                                 <img src="/assets/images/dots/dots.png" alt="Shadow Image" class="dots-1 opacity-50 img-moving-anim2">
                               </div>
                            </div>
                         </div>
                         <div class="col-lg-4 col-md-6 order-md-2 order-1">
                            <div class="item-image">
                               <div class="img-1 img-moving-anim1">
-                                 <img src="assets/images/cosplay/maisy.jpg" alt="Event template">
+                                 <img src="/assets/images/cosplay/maisy.jpg" alt="Event template">
                               </div>
                               <div class="img-2 img-moving-anim2">
-                                 <img src="assets/images/cosplay/omori.jpg" alt="Event template">
+                                 <img src="/assets/images/cosplay/omori.jpg" alt="Event template">
                               </div>
-                              <img src="assets/images/dots/dots2.png" alt="Shadow Image" class="dots-2 img-moving-anim3">
+                              <img src="/assets/images/dots/dots2.png" alt="Shadow Image" class="dots-2 img-moving-anim3">
                            </div>
                         </div>
                      </div>
@@ -198,10 +166,10 @@
                         </div>
                      </div>
                      <div class="dots">
-                        <img src="assets/images/dots/dots2.png" alt="Shadow Image" class="dots-4 img-moving-anim2">
+                        <img src="/assets/images/dots/dots2.png" alt="Shadow Image" class="dots-4 img-moving-anim2">
                      </div>
                   </div>
-                  <img src="assets/images/dots/dots5.png" alt="Shadow Image" class="dots-3 img-moving-anim3">
+                  <img src="/assets/images/dots/dots5.png" alt="Shadow Image" class="dots-3 img-moving-anim3">
                </div>
                
                <div class="hero-slider-item overflow-hidden">
@@ -217,21 +185,20 @@
                                     Easy Said, Easily Done.
                                  </p>
                                  <div class="button-group">
-                                    <a href ="/login"><button class="custom-btn2">Sign In</button></a>
-                                    <button class="custom-btn item-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Watch Video</button>
+                                    <a href ="/signup"><button class="custom-btn2">Sign Up</button></a>
                                  </div>
-                                 <img src="assets/images/dots/dots.png" alt="Shadow Image" class="dots-1 img-moving-anim3">
+                                 <img src="/assets/images/dots/dots.png" alt="Shadow Image" class="dots-1 img-moving-anim3">
                               </div>
                            </div>
                         </div>
                         <div class="col-lg-4 col-md-6 order-md-2 order-1">
                            <div class="item-video">
                               <div class="img-3 img-moving-anim1">
-                                 <img src="assets/images/cosplay/amongus.jpg" alt="Event template">
-                                 <a data-bs-toggle="modal" data-bs-target="#staticBackdrop" href="#"><i class="fa-solid fa-play"></i></a>
+                                 <img src="/assets/images/cosplay/amongus.jpg" alt="Event template">
+                                
                               </div>
                            </div>
-                           <img src="assets/images/dots/dots2.png" alt="Shadow Image" class="dots-5 img-moving-anim3">
+                           <img src="/assets/images/dots/dots2.png" alt="Shadow Image" class="dots-5 img-moving-anim3">
                         </div>
                      </div>
                      <div class="highlight-text3 img-moving-anim4">
