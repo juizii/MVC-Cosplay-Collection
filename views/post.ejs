@@ -5,12 +5,7 @@
    <meta charset="UTF-8" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link
-   rel="icon"
-   type="image/png"
-   sizes="32x32"
-   href="/imgs/favicon-32x32.png"
- />
+   <link rel="icon" type="image/png" sizes="32x32" href="/imgs/favicon-32x32.png" />
    <title>Cosplay Collection</title>
 
    <!-- google font -->
@@ -122,21 +117,23 @@
                      <img src="/assets/images/icon/moon.svg" alt="Moon" class="fa-moon">
                   </div>
 
-                  <a class="border rounded-1 py-1 px-2 bg-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                  <a class="border rounded-1 py-1 px-2 bg-light" data-bs-toggle="offcanvas" href="#offcanvasExample"
+                     role="button" aria-controls="offcanvasExample">
                      <span class="navbar-toggler-icon nav-toggler-icon"></span>
                   </a>
 
-                  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" >
+                  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample">
                      <div class="offcanvas-header">
                         <a class="navbar-brand" href="/profile">
                            <img src="/assets/images/cosplay/logo.png" alt="Header Logo">
                         </a>
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                           aria-label="Close"></button>
                      </div>
                      <div class="offcanvas-body">
                         <div class="dropdown mt-3">
                            <ul class="navbar-nav m-auto">
-                             
+
                               <li class="nav-item">
                                  <a href="/profile" class="nav-link py-3">Home</a>
                               </li>
@@ -162,12 +159,11 @@
             </div>
          </nav>
          <section class="hero-sec" style="background-image: url(/assets/images/banner/group.png);">
-   
-                              <div class="item-content">
-                                 <img src="/assets/images/dots/dots.png" alt="Shadow Image"
-                                    class="dots-1 opacity-50 img-moving-anim2">
-                              </div>
-                     
+
+            <div class="item-content">
+               <img src="/assets/images/dots/dots.png" alt="Shadow Image" class="dots-1 opacity-50 img-moving-anim2">
+            </div>
+
          </section>
       </header>
 
@@ -175,12 +171,14 @@
       <div class="modal popup-box fade" id="photoModal" tabindex="-1" aria-hidden="true">
          <div class="modal-dialog popup-box-dialog modal-dialog-centered">
             <div class="modal-content popup-box-content">
-               <form action="/post/<%= post._id %>/createRef" class="popup-form" enctype="multipart/form-data" method="POST">
+               <form action="/post/<%= post._id %>/createRef" class="popup-form" enctype="multipart/form-data"
+                  method="POST">
                   <h3>Upload Pictures</h3>
                   <div class="row gy-3 mb-3">
                      <div class="col-lg-6">
                         <label for="exampleFormControlInput5" class="form-label">Image</label>
-                        <input type="file" class="form-control" id="exampleFormControlInput5" placeholder="New Image" name="file">
+                        <input type="file" class="form-control" id="exampleFormControlInput5" placeholder="New Image"
+                           name="file">
                      </div>
                      <div class="col-lg-6">
                         <label for="exampleFormControlInput8" class="form-label">Tag</label>
@@ -194,897 +192,963 @@
                         </select>
                      </div>
                   </div>
-               <hr>
+                  <hr>
                   <button class="custom-btn2" type="submit">Add</button>
                </form>
             </div>
          </div>
       </div>
-      
+
       <!-- Modal for title upload -->
       <div class="modal popup-box fade" id="videoModal" tabindex="-1" aria-hidden="true">
          <div class="modal-dialog popup-box-dialog modal-dialog-centered">
             <div class="modal-content popup-box-content">
-               <form action="/post/<%= post._id %>/createRef" class="popup-form" enctype="multipart/form-data" method="POST">
+               <form action="/post/<%= post._id %>/createRef" class="popup-form" enctype="multipart/form-data"
+                  method="POST">
                   <h3>Add Videos and Links</h3>
                   <div class="row gy-3 mb-3">
                      <div class="col-lg-6">
                         <label for="exampleFormControlInput6" class="form-label">Title</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput6" placeholder="Title" name="title">
-                     </div>  
+                        <input type="text" class="form-control" id="exampleFormControlInput6" placeholder="Title"
+                           name="title">
+                     </div>
                      <div class="col-lg-6">
                         <label for="exampleFormControlInput9" class="form-label">Link</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput9" placeholder="Link" name="link">
+                        <input type="text" class="form-control" id="exampleFormControlInput9" placeholder="Link"
+                           name="link">
                      </div>
                   </div>
-               
-                   
-                     <div class="col-lg-6">
-                        <label for="exampleFormControlInput10" class="form-label">Tag</label>
-                        <select name="tag" class="form-control" id="exampleFormControlInput10">
-                           <option value="wigs">Wigs</option>
-                           <option value="makeup">Make-up</option>
-                           <option value="clothes">Clothes</option>
-                           <option value="props">Props</option>
-                           <option value="ref">References</option>
-                           <option value="gallery">Convention Photos</option>
-                        </select>
-                     </div>
-              
-                     <hr>
+
+
+                  <div class="col-lg-6">
+                     <label for="exampleFormControlInput10" class="form-label">Tag</label>
+                     <select name="tag" class="form-control" id="exampleFormControlInput10">
+                        <option value="wigs">Wigs</option>
+                        <option value="makeup">Make-up</option>
+                        <option value="clothes">Clothes</option>
+                        <option value="props">Props</option>
+                        <option value="ref">References</option>
+                        <option value="gallery">Convention Photos</option>
+                     </select>
+                  </div>
+
+                  <hr>
                   <button class="custom-btn2" type="submit">Add</button>
                </form>
             </div>
          </div>
       </div>
- 
+
       <br>
-  
-    
-   <!-- schedule sec start -->
-   <section id="schedule" class="schedule-sec">
-      <div class="container">
-         <div class="section-head text-center col-xl-8 m-auto mb-5">
-            <span class="label mb-4" id ="space">Let's get started</span>
-            <h2 class="title">
-               Using our boards, you can manage your ideas and inspirations, as well as save your memories in the
-               cosplays you've completed!
-            </h2>
-         </div>
 
 
-         <div class="d-flex justify-content-center mt-5" >
-        
-            <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#photoModal" id = "refButton">+ Photo</button>
-            <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#videoModal" id = "refButton">+ Inspo</button>
-        
-         </div>
+      <!-- schedule sec start -->
+      <section id="schedule" class="schedule-sec">
+         <div class="container">
+            <div class="section-head text-center col-xl-8 m-auto mb-5">
+               <span class="label mb-4" id="space">Let's get started</span>
+               <h2 class="title">
+                  Using our boards, you can manage your ideas and inspirations, as well as save your memories in the
+                  cosplays you've completed!
+               </h2>
+            </div>
 
-         <div class="schedule-content-wrap">
-            <ul class="nav nav-pills schedule-nav-tab mb-5" id="pills-tab" role="tablist">
-               <li class="nav-item schedule-nav-item" role="presentation">
-                  <button class="nav-link active" id="pills-day-1-tab" data-bs-toggle="pill"
-                     data-bs-target="#pills-day-1" type="button" role="tab" aria-controls="pills-day-1"
-                     aria-selected="true">Overview</button>
-               </li>
-               <li class="nav-item schedule-nav-item" role="presentation">
-                  <button class="nav-link" id="pills-day-2-tab" data-bs-toggle="pill" data-bs-target="#pills-day-2"
-                     type="button" role="tab" aria-controls="pills-day-2" aria-selected="false">Wigs</button>
-               </li>
-               <li class="nav-item schedule-nav-item" role="presentation">
-                  <button class="nav-link" id="pills-day-3-tab" data-bs-toggle="pill" data-bs-target="#pills-day-3"
-                     type="button" role="tab" aria-controls="pills-day-3" aria-selected="false">Make-up</button>
-               </li>
-               <li class="nav-item schedule-nav-item" role="presentation">
-                  <button class="nav-link" id="pills-day-4-tab" data-bs-toggle="pill" data-bs-target="#pills-day-4"
-                     type="button" role="tab" aria-controls="pills-day-4" aria-selected="true">Clothes</button>
-               </li>
-               <li class="nav-item schedule-nav-item" role="presentation">
-                  <button class="nav-link" id="pills-day-5-tab" data-bs-toggle="pill" data-bs-target="#pills-day-5"
-                     type="button" role="tab" aria-controls="pills-day-5" aria-selected="false">Props</button>
-               </li>
-               <li class="nav-item schedule-nav-item" role="presentation">
-                  <button class="nav-link" id="pills-day-6-tab" data-bs-toggle="pill" data-bs-target="#pills-day-6"
-                     type="button" role="tab" aria-controls="pills-day-6" aria-selected="false">References</button>
-               </li>
-               <li class="nav-item schedule-nav-item" role="presentation">
-                  <button class="nav-link" id="pills-day-7-tab" data-bs-toggle="pill" data-bs-target="#pills-day-7"
-                     type="button" role="tab" aria-controls="pills-day-7" aria-selected="false">Convention
-                     Photos</button>
-               </li>
 
-            </ul>
+            <div class="d-flex justify-content-center mt-5">
 
-<!-- Modal -->
-<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-   <div class="modal-dialog modal-dialog-centered modal-lg">
-     <div class="modal-content" id = "modalView">
-       <div class="modal-body text-center">
-         <div class="enlarged-image-container">
-           <img id="enlargedImage" class="img-fluid" src="" alt="Enlarged Image">
-         </div>
-       </div>
-     </div>
-   </div>
- </div>
- 
-            <div class="tab-content schedule-tab-content" id="pills-tabContent">
-               <div class="tab-pane fade show active" id="pills-day-1" role="tabpanel" aria-labelledby="pills-day-1-tab"
-                  tabindex="0">
-                <div class="section-head col-xl-9 m-auto text-center mb-5">
-                     <span class="label">Photos</span>
-                  </div>
-                  <section id="speakers" class="speakers-gallery-sec position-relative">
-                      
-                     <div class="container">
-                        <div class="speakers-gallery-items-wrap">
-                           <div class="row">
-                              <% for(var i=0; i<refs.length; i++) {%>
-                                 <% if (!refs[i].title && !refs[i].caption && !refs[i].link) { %>
-                                    <div class="col-md-6 col-lg-4 col-xl-3">
-                                       <div id ="characterSpace" class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
-                                          data-aos-duration="400">
-                                          <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
-                                             <img class="img-fluid" src="<%= refs[i].image %>">
-                                          </div>
-                                          <ul class="social-icons social">
-                                             <li>
-                                                <a href="#" class="view-btn" data-image-url="<%= refs[i].image %>">View</a>
-                                             </li>
-                                             <li>
-                                                <form
-                                                   action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
-                                                   method="POST">
-                                                   <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
-                                                            aria-hidden="true"></i></button></a>
-                                                </form>
-                                             </li>
-                                          </ul>
-                                       </div>
-                                    </div>
-                                    <% } %>
-                                       <% } %>
+               <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#photoModal" id="refButton">+
+                  Photo</button>
+               <button class="custom-btn2" data-bs-toggle="modal" data-bs-target="#videoModal" id="refButton">+
+                  Inspo</button>
+
+            </div>
+
+            <div class="schedule-content-wrap">
+               <ul class="nav nav-pills schedule-nav-tab mb-5" id="pills-tab" role="tablist">
+                  <li class="nav-item schedule-nav-item" role="presentation">
+                     <button class="nav-link active" id="pills-day-1-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-day-1" type="button" role="tab" aria-controls="pills-day-1"
+                        aria-selected="true">Overview</button>
+                  </li>
+                  <li class="nav-item schedule-nav-item" role="presentation">
+                     <button class="nav-link" id="pills-day-2-tab" data-bs-toggle="pill" data-bs-target="#pills-day-2"
+                        type="button" role="tab" aria-controls="pills-day-2" aria-selected="false">Wigs</button>
+                  </li>
+                  <li class="nav-item schedule-nav-item" role="presentation">
+                     <button class="nav-link" id="pills-day-3-tab" data-bs-toggle="pill" data-bs-target="#pills-day-3"
+                        type="button" role="tab" aria-controls="pills-day-3" aria-selected="false">Make-up</button>
+                  </li>
+                  <li class="nav-item schedule-nav-item" role="presentation">
+                     <button class="nav-link" id="pills-day-4-tab" data-bs-toggle="pill" data-bs-target="#pills-day-4"
+                        type="button" role="tab" aria-controls="pills-day-4" aria-selected="true">Clothes</button>
+                  </li>
+                  <li class="nav-item schedule-nav-item" role="presentation">
+                     <button class="nav-link" id="pills-day-5-tab" data-bs-toggle="pill" data-bs-target="#pills-day-5"
+                        type="button" role="tab" aria-controls="pills-day-5" aria-selected="false">Props</button>
+                  </li>
+                  <li class="nav-item schedule-nav-item" role="presentation">
+                     <button class="nav-link" id="pills-day-6-tab" data-bs-toggle="pill" data-bs-target="#pills-day-6"
+                        type="button" role="tab" aria-controls="pills-day-6" aria-selected="false">References</button>
+                  </li>
+                  <li class="nav-item schedule-nav-item" role="presentation">
+                     <button class="nav-link" id="pills-day-7-tab" data-bs-toggle="pill" data-bs-target="#pills-day-7"
+                        type="button" role="tab" aria-controls="pills-day-7" aria-selected="false">Convention
+                        Photos</button>
+                  </li>
+
+               </ul>
+
+               <!-- Modal -->
+               <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered modal-lg">
+                     <div class="modal-content" id="modalView">
+                        <div class="modal-body text-center">
+                           <div class="enlarged-image-container">
+                              <img id="enlargedImage" class="img-fluid" src="" alt="Enlarged Image">
                            </div>
                         </div>
                      </div>
-                  </section>
-                  <div class="section-head col-xl-9 m-auto text-center mb-5">
-                     <span class="label">Links</span>
                   </div>
-                  <% for (var i = 0; i < refs.length; i++) { %>
-                     <% if (!refs[i].image) { %>
-                       <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" style="background-image: url(/assets/images/banner/schedule1.png);">
-                        <div class="col-lg-4">
-                           <div class="d-flex align-items-center justify-content-around">
-                              <div class="card-thumb">
-                                 <% if (refs[i].tag === "clothes") { %>
-                                 <img src="/assets/images/clean-clothes.png" alt="Profile 1">
-                                 <% } %>
-                                 <% if (refs[i].tag === "wigs") { %>
-                                    <img src="/assets/images/wig2.png" alt="Profile 1">
-                                    <% } %>
-                                    <% if (refs[i].tag === "makeup") { %>
-                                       <img src="/assets/images/makeup.png" alt="Profile 1">
+               </div>
+
+               <div class="tab-content schedule-tab-content" id="pills-tabContent">
+                  <div class="tab-pane fade show active" id="pills-day-1" role="tabpanel"
+                     aria-labelledby="pills-day-1-tab" tabindex="0">
+                     <div class="section-head col-xl-9 m-auto text-center mb-5">
+                        <span class="label">Photos</span>
+                     </div>
+                     <section id="speakers" class="speakers-gallery-sec position-relative">
+
+                        <div class="container">
+                           <div class="speakers-gallery-items-wrap">
+                              <div class="row">
+                                 <% for(var i=0; i<refs.length; i++) {%>
+                                    <% if (!refs[i].title && !refs[i].caption && !refs[i].link) { %>
+                                       <div class="col-md-6 col-lg-4 col-xl-3">
+                                          <div id="characterSpace" class="speakers-gallery-item" data-aos="fade-up"
+                                             data-aos-easing="linear" data-aos-duration="400">
+                                             <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
+                                                <img class="img-fluid" src="<%= refs[i].image %>">
+                                             </div>
+                                             <ul class="social-icons social">
+                                                <li>
+                                                   <a href="#" class="view-btn"
+                                                      data-image-url="<%= refs[i].image %>">View</a>
+                                                </li>
+                                                <li>
+                                                   <form
+                                                      action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                                      method="POST">
+                                                      <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
+                                                               aria-hidden="true"></i></button></a>
+                                                   </form>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                       </div>
                                        <% } %>
-                                       <% if (refs[i].tag === "props") { %>
-                                          <img src="/assets/images/props.png" alt="Profile 1">
                                           <% } %>
-                                          <% if (refs[i].tag === "ref") { %>
-                                             <img src="/assets/images/gallery.png" alt="Profile 1">
-                                             <% } %>
-                                             <% if (refs[i].tag === "gallery") { %>
-                                                <img src="/assets/images/photo2.png" alt="Profile 1">
+                              </div>
+                           </div>
+                        </div>
+                     </section>
+                     <div class="section-head col-xl-9 m-auto text-center mb-5">
+                        <span class="label">Links</span>
+                     </div>
+                     <% for (var i=0; i < refs.length; i++) { %>
+                        <% if (!refs[i].image) { %>
+                           <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear"
+                              data-aos-duration="1000"
+                              style="background-image: url(/assets/images/banner/schedule1.png);">
+                              <div class="col-lg-4">
+                                 <div class="d-flex align-items-center justify-content-around">
+                                    <div class="card-thumb">
+                                       <% if (refs[i].tag==="clothes" ) { %>
+                                          <img src="/assets/images/clean-clothes.png" alt="Profile 1">
+                                          <% } %>
+                                             <% if (refs[i].tag==="wigs" ) { %>
+                                                <img src="/assets/images/wig2.png" alt="Profile 1">
                                                 <% } %>
-                              </div>
-                              <div class="card-description">
-                                 <span class="name d-block"><%= refs[i].tag.toUpperCase() %></span>
-                                 <span class="date d-block"><%= refs[i].title %></span>
-                              </div>
-                           </div>
-                        </div>
-                         <div class="col-lg-8">
-                           <div class="d-flex align-items-center justify-content-between">
-                             <div class="card-title-area col-7">
-                             
-                               <p class="title-desc">
-                                 <a href="<%= refs[i].link %>" target="_blank">
-                                   <div class="bookmark">
-                                     <% var url = refs[i].link; %>
-                                     <div class="preview-image" data-url="<%= url %>"></div>
-                                     <span>Link</span>
-                                   </div>
-                                 </a>
-                               </p>
-                             </div>
-                             <div class="card-button col-5">
-                               <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE" method="POST">
-                                 <a>
-                                   <button type="submit" class="custom-btn2">
-                                     <i class="fa fa-trash" aria-hidden="true"></i>
-                                   </button>
-                                 </a>
-                               </form>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                     <% } %>
-                   <% } %>
-
-
-               </div>
-
-               <!-- Wigs - links and iframes -->
-
-               <div class="tab-pane fade" id="pills-day-2" role="tabpanel" aria-labelledby="pills-day-2-tab"
-                  tabindex="0">
-                      <div class="section-head col-xl-9 m-auto text-center mb-5">
-                     <span class="label">Photos</span>
-                  </div>
-                  <section id="speakers" class="speakers-gallery-sec position-relative">
-                 
-                  <div class="container">
-                        <div class="speakers-gallery-items-wrap">
-                           <div class="row">
-                              <% for(var i=0; i<refs.length; i++) {%>
-                                 <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag==='wigs' ) {
-                                    %>
-                                    <div class="col-md-6 col-lg-4 col-xl-3">
-                                       <div id ="characterSpace" class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
-                                          data-aos-duration="400">
-                                          <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
-                                             <img class="img-fluid" src="<%= refs[i].image %>">
-                                          </div>
-                                          <ul class="social-icons social">
-                                             <li>
-                                                <a href="#" class="view-btn" data-image-url="<%= refs[i].image %>">View</a>
-                                             </li>
-                                             <li>
-                                                <form
-                                                   action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
-                                                   method="POST">
-                                                   <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
-                                                            aria-hidden="true"></i></button></a>
-                                                </form>
-                                             </li>
-                                          </ul>
-                                       </div>
+                                                   <% if (refs[i].tag==="makeup" ) { %>
+                                                      <img src="/assets/images/makeup.png" alt="Profile 1">
+                                                      <% } %>
+                                                         <% if (refs[i].tag==="props" ) { %>
+                                                            <img src="/assets/images/props.png" alt="Profile 1">
+                                                            <% } %>
+                                                               <% if (refs[i].tag==="ref" ) { %>
+                                                                  <img src="/assets/images/gallery.png" alt="Profile 1">
+                                                                  <% } %>
+                                                                     <% if (refs[i].tag==="gallery" ) { %>
+                                                                        <img src="/assets/images/photo2.png"
+                                                                           alt="Profile 1">
+                                                                        <% } %>
                                     </div>
-                                    <% } %>
-                                       <% } %>
-                           </div>
-                        </div>
-                     </div>
-                  </section>
-
-                  <div class="section-head col-xl-9 m-auto text-center mb-5">
-                     <span class="label">Links</span>
-                  </div>
-                  <% for (var i = 0; i < refs.length; i++) { %>
-                     <% if (!refs[i].image && refs[i].tag === "wigs") { %>
-                       <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" style="background-image: url(/assets/images/banner/schedule1.png);">
-                         <div class="col-lg-4">
-                           <div class="d-flex align-items-center justify-content-around">
-                             <div class="card-thumb">
-                               <img src="/assets/images/wig2.png" alt="Profile 1">
-                             </div>
-                             <div class="card-description">
-                               <span class="name d-block"><%= refs[i].tag.toUpperCase() %></span>
-                               <span class="date d-block"><%= refs[i].title %></span>
-                             
-                             </div>
-                           </div>
-                         </div>
-                         <div class="col-lg-8">
-                           <div class="d-flex align-items-center justify-content-between">
-                             <div class="card-title-area col-7">
-                               <p class="title-desc">
-                                 <a href="<%= refs[i].link %>" target="_blank">
-                                   <div class="bookmark">
-                                     <% var url = refs[i].link; %>
-                                     <div class="preview-image" data-url="<%= url %>"></div>
-                                     <span>Link</span>
-                                   </div>
-                                 </a>
-                               </p>
-                             </div>
-                             <div class="card-button col-5">
-                               <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE" method="POST">
-                                 <a>
-                                   <button type="submit" class="custom-btn2">
-                                     <i class="fa fa-trash" aria-hidden="true"></i>
-                                   </button>
-                                 </a>
-                               </form>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                     <% } %>
-                   <% } %>
-
-               </div>
-
-               <!-- makeup -->
-
-               <div class="tab-pane fade" id="pills-day-3" role="tabpanel" aria-labelledby="pills-day-3-tab"
-                  tabindex="0">
-                  <div class="section-head col-xl-9 m-auto text-center mb-5">
-                     <span class="label">Photos</span>
-                  </div>
-                
-                  <section id="speakers" class="speakers-gallery-sec position-relative">
-                     <div class="container">
-                        <div class="speakers-gallery-items-wrap">
-                           <div class="row">
-                              <% for(var i=0; i<refs.length; i++) {%>
-                                 <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag==='makeup' )
-                                    { %>
-                                    <div class="col-md-6 col-lg-4 col-xl-3">
-                                       <div id ="characterSpace" class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
-                                          data-aos-duration="400">
-                                          <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
-                                             <img class="img-fluid" src="<%= refs[i].image %>">
-                                          </div>
-                                          <ul class="social-icons social">
-                                             <li>
-                                                 <a href="#" class="view-btn" data-image-url="<%= refs[i].image %>">View</a>
-                                             </li>
-                                             <li>
-                                                <form
-                                                   action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
-                                                   method="POST">
-                                                   <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
-                                                            aria-hidden="true"></i></button></a>
-                                                </form>
-                                             </li>
-                                          </ul>
-                                       </div>
+                                    <div class="card-description">
+                                       <span class="name d-block">
+                                          <%= refs[i].tag.toUpperCase() %>
+                                       </span>
+                                       <span class="date d-block">
+                                          <%= refs[i].title %>
+                                       </span>
                                     </div>
-                                    <% } %>
+                                 </div>
+                              </div>
+                              <div class="col-lg-8">
+                                 <div class="d-flex align-items-center justify-content-between">
+                                    <div class="card-title-area col-7">
+
+                                       <p class="title-desc">
+                                          <a href="<%= refs[i].link %>" target="_blank">
+                                             <div class="bookmark">
+                                                <% var url=refs[i].link; %>
+                                                   <div class="preview-image" data-url="<%= url %>"></div>
+                                                   <span>Link</span>
+                                             </div>
+                                          </a>
+                                       </p>
+                                    </div>
+                                    <div class="card-button col-5">
+                                       <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                          method="POST">
+                                          <a>
+                                             <button type="submit" class="custom-btn2">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                             </button>
+                                          </a>
+                                       </form>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <% } %>
+                              <% } %>
+
+
+                  </div>
+
+                  <!-- Wigs - links and iframes -->
+
+                  <div class="tab-pane fade" id="pills-day-2" role="tabpanel" aria-labelledby="pills-day-2-tab"
+                     tabindex="0">
+                     <div class="section-head col-xl-9 m-auto text-center mb-5">
+                        <span class="label">Photos</span>
+                     </div>
+                     <section id="speakers" class="speakers-gallery-sec position-relative">
+
+                        <div class="container">
+                           <div class="speakers-gallery-items-wrap">
+                              <div class="row">
+                                 <% for(var i=0; i<refs.length; i++) {%>
+                                    <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag==='wigs' )
+                                       { %>
+                                       <div class="col-md-6 col-lg-4 col-xl-3">
+                                          <div id="characterSpace" class="speakers-gallery-item" data-aos="fade-up"
+                                             data-aos-easing="linear" data-aos-duration="400">
+                                             <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
+                                                <img class="img-fluid" src="<%= refs[i].image %>">
+                                             </div>
+                                             <ul class="social-icons social">
+                                                <li>
+                                                   <a href="#" class="view-btn"
+                                                      data-image-url="<%= refs[i].image %>">View</a>
+                                                </li>
+                                                <li>
+                                                   <form
+                                                      action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                                      method="POST">
+                                                      <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
+                                                               aria-hidden="true"></i></button></a>
+                                                   </form>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                       </div>
                                        <% } %>
+                                          <% } %>
+                              </div>
                            </div>
                         </div>
+                     </section>
+
+                     <div class="section-head col-xl-9 m-auto text-center mb-5">
+                        <span class="label">Links</span>
                      </div>
-                  </section>
-                  <div class="section-head col-xl-9 m-auto text-center mb-5">
-                     <span class="label">Links</span>
+                     <% for (var i=0; i < refs.length; i++) { %>
+                        <% if (!refs[i].image && refs[i].tag==="wigs" ) { %>
+                           <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear"
+                              data-aos-duration="1000"
+                              style="background-image: url(/assets/images/banner/schedule1.png);">
+                              <div class="col-lg-4">
+                                 <div class="d-flex align-items-center justify-content-around">
+                                    <div class="card-thumb">
+                                       <img src="/assets/images/wig2.png" alt="Profile 1">
+                                    </div>
+                                    <div class="card-description">
+                                       <span class="name d-block">
+                                          <%= refs[i].tag.toUpperCase() %>
+                                       </span>
+                                       <span class="date d-block">
+                                          <%= refs[i].title %>
+                                       </span>
+
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-8">
+                                 <div class="d-flex align-items-center justify-content-between">
+                                    <div class="card-title-area col-7">
+                                       <p class="title-desc">
+                                          <a href="<%= refs[i].link %>" target="_blank">
+                                             <div class="bookmark">
+                                                <% var url=refs[i].link; %>
+                                                   <div class="preview-image" data-url="<%= url %>"></div>
+                                                   <span>Link</span>
+                                             </div>
+                                          </a>
+                                       </p>
+                                    </div>
+                                    <div class="card-button col-5">
+                                       <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                          method="POST">
+                                          <a>
+                                             <button type="submit" class="custom-btn2">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                             </button>
+                                          </a>
+                                       </form>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <% } %>
+                              <% } %>
+
                   </div>
-                  <% for (var i = 0; i < refs.length; i++) { %>
-                     <% if (!refs[i].image && refs[i].tag === "makeup") { %>
-                       <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" style="background-image: url(/assets/images/banner/schedule1.png);">
-                        <div class="col-lg-4">
-                           <div class="d-flex align-items-center justify-content-around">
-                              <div class="card-thumb">
+
+                  <!-- makeup -->
+
+                  <div class="tab-pane fade" id="pills-day-3" role="tabpanel" aria-labelledby="pills-day-3-tab"
+                     tabindex="0">
+                     <div class="section-head col-xl-9 m-auto text-center mb-5">
+                        <span class="label">Photos</span>
+                     </div>
+
+                     <section id="speakers" class="speakers-gallery-sec position-relative">
+                        <div class="container">
+                           <div class="speakers-gallery-items-wrap">
+                              <div class="row">
+                                 <% for(var i=0; i<refs.length; i++) {%>
+                                    <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag==='makeup'
+                                       ) { %>
+                                       <div class="col-md-6 col-lg-4 col-xl-3">
+                                          <div id="characterSpace" class="speakers-gallery-item" data-aos="fade-up"
+                                             data-aos-easing="linear" data-aos-duration="400">
+                                             <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
+                                                <img class="img-fluid" src="<%= refs[i].image %>">
+                                             </div>
+                                             <ul class="social-icons social">
+                                                <li>
+                                                   <a href="#" class="view-btn"
+                                                      data-image-url="<%= refs[i].image %>">View</a>
+                                                </li>
+                                                <li>
+                                                   <form
+                                                      action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                                      method="POST">
+                                                      <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
+                                                               aria-hidden="true"></i></button></a>
+                                                   </form>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                       </div>
+                                       <% } %>
+                                          <% } %>
+                              </div>
+                           </div>
+                        </div>
+                     </section>
+                     <div class="section-head col-xl-9 m-auto text-center mb-5">
+                        <span class="label">Links</span>
+                     </div>
+                     <% for (var i=0; i < refs.length; i++) { %>
+                        <% if (!refs[i].image && refs[i].tag==="makeup" ) { %>
+                           <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear"
+                              data-aos-duration="1000"
+                              style="background-image: url(/assets/images/banner/schedule1.png);">
+                              <div class="col-lg-4">
+                                 <div class="d-flex align-items-center justify-content-around">
+                                    <div class="card-thumb">
                                        <img src="/assets/images/makeup.png" alt="Profile 1">
-                              </div>
-                              <div class="card-description">
-                                 <span class="name d-block"><%= refs[i].tag.toUpperCase() %></span>
-                                 <span class="date d-block"><%= refs[i].title %></span>
-                                
-                              </div>
-                           </div>
-                        </div>
-                         <div class="col-lg-8">
-                           <div class="d-flex align-items-center justify-content-between">
-                             <div class="card-title-area col-7">
-                               <p class="title-desc">
-                                 <a href="<%= refs[i].link %>" target="_blank">
-                                   <div class="bookmark">
-                                     <% var url = refs[i].link; %>
-                                     <div class="preview-image" data-url="<%= url %>"></div>
-                                     <span>Link</span>
-                                   </div>
-                                 </a>
-                               </p>
-                             </div>
-                             <div class="card-button col-5">
-                               <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE" method="POST">
-                                 <a>
-                                   <button type="submit" class="custom-btn2">
-                                     <i class="fa fa-trash" aria-hidden="true"></i>
-                                   </button>
-                                 </a>
-                               </form>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                     <% } %>
-                   <% } %>
-
-
-               </div>
-
-               <!-- clothes -->
-
-               <div class="tab-pane fade" id="pills-day-4" role="tabpanel" aria-labelledby="pills-day-4-tab"
-                  tabindex="0">
-                  <div class="section-head col-xl-9 m-auto text-center mb-5">
-                     <span class="label">Photos</span>
-                  </div>
-                  <section id="speakers" class="speakers-gallery-sec position-relative">
-                     <div class="container">
-                        <div class="speakers-gallery-items-wrap">
-                           <div class="row">
-                              <% for(var i=0; i<refs.length; i++) {%>
-                                 <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag==='clothes' )
-                                    { %>
-                                    <div class="col-md-6 col-lg-4 col-xl-3">
-                                       <div id ="characterSpace" class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
-                                          data-aos-duration="400">
-                                          <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
-                                             <img class="img-fluid" src="<%= refs[i].image %>">
-                                          </div>
-                                          <ul class="social-icons social">
-                                             <li>
-                                                 <a href="#" class="view-btn" data-image-url="<%= refs[i].image %>">View</a>
-                                             </li>
-                                             <li>
-                                                <form
-                                                   action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
-                                                   method="POST">
-                                                   <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
-                                                            aria-hidden="true"></i></button></a>
-                                                </form>
-                                             </li>
-                                          </ul>
-                                       </div>
                                     </div>
-                                    <% } %>
+                                    <div class="card-description">
+                                       <span class="name d-block">
+                                          <%= refs[i].tag.toUpperCase() %>
+                                       </span>
+                                       <span class="date d-block">
+                                          <%= refs[i].title %>
+                                       </span>
+
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-8">
+                                 <div class="d-flex align-items-center justify-content-between">
+                                    <div class="card-title-area col-7">
+                                       <p class="title-desc">
+                                          <a href="<%= refs[i].link %>" target="_blank">
+                                             <div class="bookmark">
+                                                <% var url=refs[i].link; %>
+                                                   <div class="preview-image" data-url="<%= url %>"></div>
+                                                   <span>Link</span>
+                                             </div>
+                                          </a>
+                                       </p>
+                                    </div>
+                                    <div class="card-button col-5">
+                                       <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                          method="POST">
+                                          <a>
+                                             <button type="submit" class="custom-btn2">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                             </button>
+                                          </a>
+                                       </form>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <% } %>
+                              <% } %>
+
+
+                  </div>
+
+                  <!-- clothes -->
+
+                  <div class="tab-pane fade" id="pills-day-4" role="tabpanel" aria-labelledby="pills-day-4-tab"
+                     tabindex="0">
+                     <div class="section-head col-xl-9 m-auto text-center mb-5">
+                        <span class="label">Photos</span>
+                     </div>
+                     <section id="speakers" class="speakers-gallery-sec position-relative">
+                        <div class="container">
+                           <div class="speakers-gallery-items-wrap">
+                              <div class="row">
+                                 <% for(var i=0; i<refs.length; i++) {%>
+                                    <% if (!refs[i].title && !refs[i].caption && !refs[i].link &&
+                                       refs[i].tag==='clothes' ) { %>
+                                       <div class="col-md-6 col-lg-4 col-xl-3">
+                                          <div id="characterSpace" class="speakers-gallery-item" data-aos="fade-up"
+                                             data-aos-easing="linear" data-aos-duration="400">
+                                             <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
+                                                <img class="img-fluid" src="<%= refs[i].image %>">
+                                             </div>
+                                             <ul class="social-icons social">
+                                                <li>
+                                                   <a href="#" class="view-btn"
+                                                      data-image-url="<%= refs[i].image %>">View</a>
+                                                </li>
+                                                <li>
+                                                   <form
+                                                      action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                                      method="POST">
+                                                      <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
+                                                               aria-hidden="true"></i></button></a>
+                                                   </form>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                       </div>
                                        <% } %>
+                                          <% } %>
+                              </div>
                            </div>
                         </div>
-                     </div>
-                  </section>
+                     </section>
 
-                  <div class="section-head col-xl-9 m-auto text-center mb-5">
-                     <span class="label">Links</span>
-                  </div>
-                  <% for (var i = 0; i < refs.length; i++) { %>
-                     <% if (!refs[i].image && refs[i].tag === "clothes") { %>
-                       <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" style="background-image: url(/assets/images/banner/schedule1.png);">
-                        <div class="col-lg-4">
-                           <div class="d-flex align-items-center justify-content-around">
-                              <div class="card-thumb">
+                     <div class="section-head col-xl-9 m-auto text-center mb-5">
+                        <span class="label">Links</span>
+                     </div>
+                     <% for (var i=0; i < refs.length; i++) { %>
+                        <% if (!refs[i].image && refs[i].tag==="clothes" ) { %>
+                           <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear"
+                              data-aos-duration="1000"
+                              style="background-image: url(/assets/images/banner/schedule1.png);">
+                              <div class="col-lg-4">
+                                 <div class="d-flex align-items-center justify-content-around">
+                                    <div class="card-thumb">
                                        <img src="/assets/images/clean-clothes.png" alt="Profile 1">
-                                    
-                              </div>
-                              <div class="card-description">
-                                 <span class="name d-block"><%= refs[i].tag.toUpperCase() %></span>
-                                 <span class="date d-block"><%= refs[i].title %></span>
-                               
-                              </div>
-                           </div>
-                        </div>
-                         <div class="col-lg-8">
-                           <div class="d-flex align-items-center justify-content-between">
-                             <div class="card-title-area col-7">
-                               <p class="title-desc">
-                                 <a href="<%= refs[i].link %>" target="_blank">
-                                   <div class="bookmark">
-                                     <% var url = refs[i].link; %>
-                                     <div class="preview-image" data-url="<%= url %>"></div>
-                                     <span>Link</span>
-                                   </div>
-                                 </a>
-                               </p>
-                             </div>
-                             <div class="card-button col-5">
-                               <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE" method="POST">
-                                 <a>
-                                   <button type="submit" class="custom-btn2">
-                                     <i class="fa fa-trash" aria-hidden="true"></i>
-                                   </button>
-                                 </a>
-                               </form>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                     <% } %>
-                   <% } %>
 
-
-               </div>
-
-               <!-- props -->
-               <div class="tab-pane fade" id="pills-day-5" role="tabpanel" aria-labelledby="pills-day-5-tab"
-                  tabindex="0">
-                  <div class="section-head col-xl-9 m-auto text-center mb-5">
-                     <span class="label">Photos</span>
-                  </div>
-                  <section id="speakers" class="speakers-gallery-sec position-relative">
-                     <div class="container">
-                        <div class="speakers-gallery-items-wrap">
-                           <div class="row">
-                              <% for(var i=0; i<refs.length; i++) {%>
-                                 <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag==='props' ) {
-                                    %>
-                                    <div class="col-md-6 col-lg-4 col-xl-3">
-                                       <div id ="characterSpace" class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
-                                          data-aos-duration="400">
-                                          <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
-                                             <img class="img-fluid" src="<%= refs[i].image %>">
-                                          </div>
-                                          <ul class="social-icons social">
-                                             <li>
-                                                 <a href="#" class="view-btn" data-image-url="<%= refs[i].image %>">View</a>
-                                             </li>
-                                             <li>
-                                                <form
-                                                   action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
-                                                   method="POST">
-                                                   <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
-                                                            aria-hidden="true"></i></button></a>
-                                                </form>
-                                             </li>
-                                          </ul>
-                                       </div>
                                     </div>
-                                    <% } %>
+                                    <div class="card-description">
+                                       <span class="name d-block">
+                                          <%= refs[i].tag.toUpperCase() %>
+                                       </span>
+                                       <span class="date d-block">
+                                          <%= refs[i].title %>
+                                       </span>
+
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-8">
+                                 <div class="d-flex align-items-center justify-content-between">
+                                    <div class="card-title-area col-7">
+                                       <p class="title-desc">
+                                          <a href="<%= refs[i].link %>" target="_blank">
+                                             <div class="bookmark">
+                                                <% var url=refs[i].link; %>
+                                                   <div class="preview-image" data-url="<%= url %>"></div>
+                                                   <span>Link</span>
+                                             </div>
+                                          </a>
+                                       </p>
+                                    </div>
+                                    <div class="card-button col-5">
+                                       <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                          method="POST">
+                                          <a>
+                                             <button type="submit" class="custom-btn2">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                             </button>
+                                          </a>
+                                       </form>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <% } %>
+                              <% } %>
+
+
+                  </div>
+
+                  <!-- props -->
+                  <div class="tab-pane fade" id="pills-day-5" role="tabpanel" aria-labelledby="pills-day-5-tab"
+                     tabindex="0">
+                     <div class="section-head col-xl-9 m-auto text-center mb-5">
+                        <span class="label">Photos</span>
+                     </div>
+                     <section id="speakers" class="speakers-gallery-sec position-relative">
+                        <div class="container">
+                           <div class="speakers-gallery-items-wrap">
+                              <div class="row">
+                                 <% for(var i=0; i<refs.length; i++) {%>
+                                    <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag==='props'
+                                       ) { %>
+                                       <div class="col-md-6 col-lg-4 col-xl-3">
+                                          <div id="characterSpace" class="speakers-gallery-item" data-aos="fade-up"
+                                             data-aos-easing="linear" data-aos-duration="400">
+                                             <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
+                                                <img class="img-fluid" src="<%= refs[i].image %>">
+                                             </div>
+                                             <ul class="social-icons social">
+                                                <li>
+                                                   <a href="#" class="view-btn"
+                                                      data-image-url="<%= refs[i].image %>">View</a>
+                                                </li>
+                                                <li>
+                                                   <form
+                                                      action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                                      method="POST">
+                                                      <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
+                                                               aria-hidden="true"></i></button></a>
+                                                   </form>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                       </div>
                                        <% } %>
+                                          <% } %>
+                              </div>
                            </div>
                         </div>
+                     </section>
+
+                     <div class="section-head col-xl-9 m-auto text-center mb-5">
+                        <span class="label">Links</span>
                      </div>
-                  </section>
+                     <% for (var i=0; i < refs.length; i++) { %>
+                        <% if (!refs[i].image && refs[i].tag==="props" ) { %>
+                           <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear"
+                              data-aos-duration="1000"
+                              style="background-image: url(/assets/images/banner/schedule1.png);">
+                              <div class="col-lg-4">
+                                 <div class="d-flex align-items-center justify-content-around">
+                                    <div class="card-thumb">
+                                       <img src="/assets/images/props.png" alt="Profile 1">
 
-                  <div class="section-head col-xl-9 m-auto text-center mb-5">
-                     <span class="label">Links</span>
-                  </div>
-                  <% for (var i = 0; i < refs.length; i++) { %>
-                     <% if (!refs[i].image && refs[i].tag === "props") { %>
-                       <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" style="background-image: url(/assets/images/banner/schedule1.png);">
-                        <div class="col-lg-4">
-                           <div class="d-flex align-items-center justify-content-around">
-                              <div class="card-thumb">
-                                          <img src="/assets/images/props.png" alt="Profile 1">
-                                      
-                              </div>
-                              <div class="card-description">
-                                 <span class="name d-block"><%= refs[i].tag.toUpperCase() %></span>
-                                 <span class="date d-block"><%= refs[i].title %></span>
-                               
-                              </div>
-                           </div>
-                        </div>
-                         <div class="col-lg-8">
-                           <div class="d-flex align-items-center justify-content-between">
-                             <div class="card-title-area col-7">
-                               <p class="title-desc">
-                                 <a href="<%= refs[i].link %>" target="_blank">
-                                   <div class="bookmark">
-                                     <% var url = refs[i].link; %>
-                                     <div class="preview-image" data-url="<%= url %>"></div>
-                                     <span>Link</span>
-                                   </div>
-                                 </a>
-                               </p>
-                             </div>
-                             <div class="card-button col-5">
-                               <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE" method="POST">
-                                 <a>
-                                   <button type="submit" class="custom-btn2">
-                                     <i class="fa fa-trash" aria-hidden="true"></i>
-                                   </button>
-                                 </a>
-                               </form>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                     <% } %>
-                   <% } %>
-
-
-
-               </div>
-
-               <!-- references -->
-               <div class="tab-pane fade" id="pills-day-6" role="tabpanel" aria-labelledby="pills-day-6-tab"
-                  tabindex="0">
-                  <div class="section-head col-xl-9 m-auto text-center mb-5">
-                     <span class="label">Photos</span>
-                  </div>
-                  <section id="speakers" class="speakers-gallery-sec position-relative">
-                     <div class="container">
-                        <div class="speakers-gallery-items-wrap">
-                           <div class="row">
-                              <% for(var i=0; i<refs.length; i++) {%>
-                                 <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag==='ref' ) {
-                                    %>
-                                    <div class="col-md-6 col-lg-4 col-xl-3">
-                                       <div id ="characterSpace" class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
-                                          data-aos-duration="400">
-                                          <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
-                                             <img class="img-fluid" src="<%= refs[i].image %>">
-                                          </div>
-                                          <ul class="social-icons social">
-                                             <li>
-                                                 <a href="#" class="view-btn" data-image-url="<%= refs[i].image %>">View</a>
-                                             </li>
-                                             <li>
-                                                <form
-                                                   action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
-                                                   method="POST">
-                                                   <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
-                                                            aria-hidden="true"></i></button></a>
-                                                </form>
-                                             </li>
-                                          </ul>
-                                       </div>
                                     </div>
-                                    <% } %>
+                                    <div class="card-description">
+                                       <span class="name d-block">
+                                          <%= refs[i].tag.toUpperCase() %>
+                                       </span>
+                                       <span class="date d-block">
+                                          <%= refs[i].title %>
+                                       </span>
+
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-8">
+                                 <div class="d-flex align-items-center justify-content-between">
+                                    <div class="card-title-area col-7">
+                                       <p class="title-desc">
+                                          <a href="<%= refs[i].link %>" target="_blank">
+                                             <div class="bookmark">
+                                                <% var url=refs[i].link; %>
+                                                   <div class="preview-image" data-url="<%= url %>"></div>
+                                                   <span>Link</span>
+                                             </div>
+                                          </a>
+                                       </p>
+                                    </div>
+                                    <div class="card-button col-5">
+                                       <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                          method="POST">
+                                          <a>
+                                             <button type="submit" class="custom-btn2">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                             </button>
+                                          </a>
+                                       </form>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <% } %>
+                              <% } %>
+
+
+
+                  </div>
+
+                  <!-- references -->
+                  <div class="tab-pane fade" id="pills-day-6" role="tabpanel" aria-labelledby="pills-day-6-tab"
+                     tabindex="0">
+                     <div class="section-head col-xl-9 m-auto text-center mb-5">
+                        <span class="label">Photos</span>
+                     </div>
+                     <section id="speakers" class="speakers-gallery-sec position-relative">
+                        <div class="container">
+                           <div class="speakers-gallery-items-wrap">
+                              <div class="row">
+                                 <% for(var i=0; i<refs.length; i++) {%>
+                                    <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag==='ref' )
+                                       { %>
+                                       <div class="col-md-6 col-lg-4 col-xl-3">
+                                          <div id="characterSpace" class="speakers-gallery-item" data-aos="fade-up"
+                                             data-aos-easing="linear" data-aos-duration="400">
+                                             <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
+                                                <img class="img-fluid" src="<%= refs[i].image %>">
+                                             </div>
+                                             <ul class="social-icons social">
+                                                <li>
+                                                   <a href="#" class="view-btn"
+                                                      data-image-url="<%= refs[i].image %>">View</a>
+                                                </li>
+                                                <li>
+                                                   <form
+                                                      action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                                      method="POST">
+                                                      <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
+                                                               aria-hidden="true"></i></button></a>
+                                                   </form>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                       </div>
                                        <% } %>
+                                          <% } %>
+                              </div>
                            </div>
                         </div>
+                     </section>
+                     <div class="section-head col-xl-9 m-auto text-center mb-5">
+                        <span class="label">Links</span>
                      </div>
-                  </section>
-                  <div class="section-head col-xl-9 m-auto text-center mb-5">
-                     <span class="label">Links</span>
-                  </div>
-                  <% for (var i = 0; i < refs.length; i++) { %>
-                     <% if (!refs[i].image && refs[i].tag === "ref") { %>
-                       <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" style="background-image: url(/assets/images/banner/schedule1.png);">
-                        <div class="col-lg-4">
-                           <div class="d-flex align-items-center justify-content-around">
-                              <div class="card-thumb">
-                                          <img src="/assets/images/gallery.png" alt="Profile 1">
-                                      
-                              </div>
-                              <div class="card-description">
-                                 <span class="name d-block"><%= refs[i].tag.toUpperCase() %></span>
-                                 <span class="date d-block"><%= refs[i].title %></span>
-                               
-                              </div>
-                           </div>
-                        </div>
-                         <div class="col-lg-8">
-                           <div class="d-flex align-items-center justify-content-between">
-                             <div class="card-title-area col-7">
-                               <p class="title-desc">
-                                 <a href="<%= refs[i].link %>" target="_blank">
-                                   <div class="bookmark">
-                                     <% var url = refs[i].link; %>
-                                     <div class="preview-image" data-url="<%= url %>"></div>
-                                     <span>Link</span>
-                                   </div>
-                                 </a>
-                               </p>
-                             </div>
-                             <div class="card-button col-5">
-                               <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE" method="POST">
-                                 <a>
-                                   <button type="submit" class="custom-btn2">
-                                     <i class="fa fa-trash" aria-hidden="true"></i>
-                                   </button>
-                                 </a>
-                               </form>
-                             </div>
-                           </div>
-                         </div>
-                       </div>
-                     <% } %>
-                   <% } %>
+                     <% for (var i=0; i < refs.length; i++) { %>
+                        <% if (!refs[i].image && refs[i].tag==="ref" ) { %>
+                           <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear"
+                              data-aos-duration="1000"
+                              style="background-image: url(/assets/images/banner/schedule1.png);">
+                              <div class="col-lg-4">
+                                 <div class="d-flex align-items-center justify-content-around">
+                                    <div class="card-thumb">
+                                       <img src="/assets/images/gallery.png" alt="Profile 1">
 
-
-
-               </div>
-
-               <!-- Con photos -->
-               <div class="tab-pane fade" id="pills-day-7" role="tabpanel" aria-labelledby="pills-day-7-tab"
-                  tabindex="0">
-                  <div class="section-head col-xl-9 m-auto text-center mb-5">
-                     <span class="label">Photos</span>
-                  </div>
-                  <section id="speakers" class="speakers-gallery-sec position-relative">
-                     <div class="container">
-                        <div class="speakers-gallery-items-wrap">
-                           <div class="row">
-                              <% for(var i=0; i<refs.length; i++) {%>
-                                 <% if (!refs[i].title && !refs[i].caption && !refs[i].link && refs[i].tag==='gallery' )
-                                    { %>
-                                    <div class="col-md-6 col-lg-4 col-xl-3">
-                                       <div id ="characterSpace" class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
-                                          data-aos-duration="400">
-                                          <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
-                                             <img class="img-fluid" src="<%= refs[i].image %>">
-                                          </div>
-                                          <ul class="social-icons social">
-                                             <li>
-                                                 <a href="#" class="view-btn" data-image-url="<%= refs[i].image %>">View</a>
-                                             </li>
-                                             <li>
-                                                <form
-                                                   action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
-                                                   method="POST">
-                                                   <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
-                                                            aria-hidden="true"></i></button></a>
-                                                </form>
-                                             </li>
-                                          </ul>
-                                       </div>
                                     </div>
-                                    <% } %>
-                                 <% } %>
-                           </div>
-                        </div>
-                     </div>
-                  </section>
+                                    <div class="card-description">
+                                       <span class="name d-block">
+                                          <%= refs[i].tag.toUpperCase() %>
+                                       </span>
+                                       <span class="date d-block">
+                                          <%= refs[i].title %>
+                                       </span>
 
-                  <div class="section-head col-xl-9 m-auto text-center mb-5">
-                     <span class="label">Links</span>
-                  </div>
-                  
-                  <% for (var i = 0; i < refs.length; i++) { %>
-                     <% if (!refs[i].image && refs[i].tag=== "gallery") { %>
-                       <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" style="background-image: url(/assets/images/banner/schedule1.png);">
-                        <div class="col-lg-4">
-                           <div class="d-flex align-items-center justify-content-around">
-                              <div class="card-thumb">
-                              <img src="/assets/images/photo2.png" alt="Profile 1">      
+                                    </div>
+                                 </div>
                               </div>
-                        
-                              <div class="card-description">
-                                 <span class="name d-block"><%= refs[i].tag.toUpperCase() %></span>
-                                 <span class="date d-block"><%= refs[i].title %></span>
+                              <div class="col-lg-8">
+                                 <div class="d-flex align-items-center justify-content-between">
+                                    <div class="card-title-area col-7">
+                                       <p class="title-desc">
+                                          <a href="<%= refs[i].link %>" target="_blank">
+                                             <div class="bookmark">
+                                                <% var url=refs[i].link; %>
+                                                   <div class="preview-image" data-url="<%= url %>"></div>
+                                                   <span>Link</span>
+                                             </div>
+                                          </a>
+                                       </p>
+                                    </div>
+                                    <div class="card-button col-5">
+                                       <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                          method="POST">
+                                          <a>
+                                             <button type="submit" class="custom-btn2">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                             </button>
+                                          </a>
+                                       </form>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <% } %>
+                              <% } %>
+
+
+
+                  </div>
+
+                  <!-- Con photos -->
+                  <div class="tab-pane fade" id="pills-day-7" role="tabpanel" aria-labelledby="pills-day-7-tab"
+                     tabindex="0">
+                     <div class="section-head col-xl-9 m-auto text-center mb-5">
+                        <span class="label">Photos</span>
+                     </div>
+                     <section id="speakers" class="speakers-gallery-sec position-relative">
+                        <div class="container">
+                           <div class="speakers-gallery-items-wrap">
+                              <div class="row">
+                                 <% for(var i=0; i<refs.length; i++) {%>
+                                    <% if (!refs[i].title && !refs[i].caption && !refs[i].link &&
+                                       refs[i].tag==='gallery' ) { %>
+                                       <div class="col-md-6 col-lg-4 col-xl-3">
+                                          <div id="characterSpace" class="speakers-gallery-item" data-aos="fade-up"
+                                             data-aos-easing="linear" data-aos-duration="400">
+                                             <div class="speakers-gallery-item-thumb overflow-hidden position-relative">
+                                                <img class="img-fluid" src="<%= refs[i].image %>">
+                                             </div>
+                                             <ul class="social-icons social">
+                                                <li>
+                                                   <a href="#" class="view-btn"
+                                                      data-image-url="<%= refs[i].image %>">View</a>
+                                                </li>
+                                                <li>
+                                                   <form
+                                                      action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                                      method="POST">
+                                                      <a><button type="submit" class="delete-btn"><i class="fa fa-trash"
+                                                               aria-hidden="true"></i></button></a>
+                                                   </form>
+                                                </li>
+                                             </ul>
+                                          </div>
+                                       </div>
+                                       <% } %>
+                                          <% } %>
                               </div>
                            </div>
                         </div>
-                         <div class="col-lg-8">
-                           <div class="d-flex align-items-center justify-content-between">
-                             <div class="card-title-area col-7">
-                               <p class="title-desc">
-                                 <a href="<%= refs[i].link %>" target="_blank">
-                                   <div class="bookmark">
-                                     <% var url = refs[i].link; %>
-                                     <div class="preview-image" data-url="<%= url %>"></div>
-                                     <span>Link</span>
-                                   </div>
-                                 </a>
-                               </p>
-                             </div>
-                             <div class="card-button col-5">
-                               <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE" method="POST">
-                                 <a>
-                                   <button type="submit" class="custom-btn2">
-                                     <i class="fa fa-trash" aria-hidden="true"></i>
-                                   </button>
-                                 </a>
-                               </form>
-                             </div>
+                     </section>
+
+                     <div class="section-head col-xl-9 m-auto text-center mb-5">
+                        <span class="label">Links</span>
+                     </div>
+
+                     <% for (var i=0; i < refs.length; i++) { %>
+                        <% if (!refs[i].image && refs[i].tag==="gallery" ) { %>
+                           <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear"
+                              data-aos-duration="1000"
+                              style="background-image: url(/assets/images/banner/schedule1.png);">
+                              <div class="col-lg-4">
+                                 <div class="d-flex align-items-center justify-content-around">
+                                    <div class="card-thumb">
+                                       <img src="/assets/images/photo2.png" alt="Profile 1">
+                                    </div>
+
+                                    <div class="card-description">
+                                       <span class="name d-block">
+                                          <%= refs[i].tag.toUpperCase() %>
+                                       </span>
+                                       <span class="date d-block">
+                                          <%= refs[i].title %>
+                                       </span>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-8">
+                                 <div class="d-flex align-items-center justify-content-between">
+                                    <div class="card-title-area col-7">
+                                       <p class="title-desc">
+                                          <a href="<%= refs[i].link %>" target="_blank">
+                                             <div class="bookmark">
+                                                <% var url=refs[i].link; %>
+                                                   <div class="preview-image" data-url="<%= url %>"></div>
+                                                   <span>Link</span>
+                                             </div>
+                                          </a>
+                                       </p>
+                                    </div>
+                                    <div class="card-button col-5">
+                                       <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
+                                          method="POST">
+                                          <a>
+                                             <button type="submit" class="custom-btn2">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                             </button>
+                                          </a>
+                                       </form>
+                                    </div>
+                                 </div>
+                              </div>
                            </div>
-                         </div>
-                       </div>
-                     <% } %>
-                   <% } %>
+                           <% } %>
+                              <% } %>
 
 
 
 
+                  </div>
+               </div>
+               <div class="dots img-moving-anim1">
+                  <img src="/assets/images/dots/dots2.png" alt="Shadow Image">
                </div>
             </div>
-            <div class="dots img-moving-anim1">
-               <img src="/assets/images/dots/dots2.png" alt="Shadow Image">
-            </div>
          </div>
-      </div>
-      <div class="shape">
-         <img src="/assets/images/shape/2.svg" alt="Shape">
-      </div>
-   </section>
-   <!-- schedule sec end -->
+         <div class="shape">
+            <img src="/assets/images/shape/2.svg" alt="Shape">
+         </div>
+      </section>
+      <!-- schedule sec end -->
 
 
 
 
 
-   <!-- footer area start -->
-   <footer class="footer-area" style="background-image: url(/assets/images/banner/Footer.png);">
-      <div class="container">
-         <div class="footer-top">
-            <div class="row">
-               <div class=" col-lg-6">
-                  <div class="row">
-                     <div class="col-sm-6 col-lg-8 ">
-                        <div class="footer-info">
-                           <a href="/profile" class="footer-logo">
-                              <img src="/assets/images/cosplay/logo2.png" alt="Footer Logo">
-                           </a>
-                           <p class="footer-desc">
-                              Join the nation of weebs and otakus and make an account today. You will never be making last
-                              minute decisions in cosplay every again! Follow the creator to support updates to the app.
-                           </p>
-                           <ul class="footer-social social">
-                              <li>
-                                 <a href="https://github.com/juizii" target="_blank"><i
-                                       class="fa-brands fa-github"></i></a>
-                              </li>
-                              <li>
-                                 <a href="https://www.linkedin.com/in/juizii/" target="_blank"><i
-                                       class="fa-brands fa-linkedin-in"></i></a>
-                              </li>
-                              <li>
-                                 <a href="https://www.instagram.com/juizii_/?hl=en" target="_blank"><i
-                                       class="fa-brands fa-instagram"></i></a>
-                              </li>
-                           </ul>
+      <!-- footer area start -->
+      <footer class="footer-area" style="background-image: url(/assets/images/banner/Footer.png);">
+         <div class="container">
+            <div class="footer-top">
+               <div class="row">
+                  <div class=" col-lg-6">
+                     <div class="row">
+                        <div class="col-sm-6 col-lg-8 ">
+                           <div class="footer-info">
+                              <a href="/profile" class="footer-logo">
+                                 <img src="/assets/images/cosplay/logo2.png" alt="Footer Logo">
+                              </a>
+                              <p class="footer-desc">
+                                 Join the nation of weebs and otakus and make an account today. You will never be making
+                                 last
+                                 minute decisions in cosplay every again! Follow the creator to support updates to the
+                                 app.
+                              </p>
+                              <ul class="footer-social social">
+                                 <li>
+                                    <a href="https://github.com/juizii" target="_blank"><i
+                                          class="fa-brands fa-github"></i></a>
+                                 </li>
+                                 <li>
+                                    <a href="https://www.linkedin.com/in/juizii/" target="_blank"><i
+                                          class="fa-brands fa-linkedin-in"></i></a>
+                                 </li>
+                                 <li>
+                                    <a href="https://www.instagram.com/juizii_/?hl=en" target="_blank"><i
+                                          class="fa-brands fa-instagram"></i></a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                           <div class="footer-about custom-item">
+                              <h5 class="title">Navigate</h5>
+                              <ul class="about-item">
+                                 <li><a href="/profile">Home</a></li>
+                                 <li><a href="/profile#about">About</a></li>
+                                 <li><a href="/profile#speakers">Characters</a></li>
+                              </ul>
+                           </div>
                         </div>
                      </div>
-                     <div class="col-sm-6 col-lg-4">
-                        <div class="footer-about custom-item">
-                           <h5 class="title">Navigate</h5>
-                           <ul class="about-item">
-                              <li><a href="/profile">Home</a></li>
-                              <li><a href="/profile#about">About</a></li>
-                              <li><a href="/profile#speakers">Characters</a></li>
-                           </ul>
+                  </div>
+                  <div class=" col-lg-6">
+                     <div class="row">
+
+                        <div class="col-sm-6">
+                           <div class="footer-enterprise custom-item">
+                              <h5 class="title">Helpful Links</h5>
+                              <ul class="enterprise-item">
+                                 <li><a href="https://fancons.com/events/">Upcoming Conventions</a></li>
+                                 <li><a href="https://www.pinterest.com/">Pinterest</a></li>
+                                 <li><a href="https://www.tiktok.com/en/">Tiktok</a></li>
+                                 <li><a href="https://www.amazon.com/">Amazon</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="footer-contact custom-item">
+                              <h5 class="title">Contact</h5>
+                              <ul class="contact-item">
+                                 <li><a href="/profile#questions">Help Desk</a></li>
+                                 <li><a href="/profile#contact">Contact Us</a></li>
+                                 <li><a href="">Resources</a></li>
+                                 <li><a href="">Kofi</a></li>
+                              </ul>
+                           </div>
                         </div>
                      </div>
                   </div>
                </div>
-               <div class=" col-lg-6">
-                  <div class="row">
-   
-                     <div class="col-sm-6">
-                        <div class="footer-enterprise custom-item">
-                           <h5 class="title">Helpful Links</h5>
-                           <ul class="enterprise-item">
-                              <li><a href="https://fancons.com/events/">Upcoming Conventions</a></li>
-                              <li><a href="https://www.pinterest.com/">Pinterest</a></li>
-                              <li><a href="https://www.tiktok.com/en/">Tiktok</a></li>
-                              <li><a href="https://www.amazon.com/">Amazon</a></li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="col-sm-6">
-                        <div class="footer-contact custom-item">
-                           <h5 class="title">Contact</h5>
-                           <ul class="contact-item">
-                              <li><a href="/profile#questions">Help Desk</a></li>
-                              <li><a href="/profile#contact">Contact Us</a></li>
-                              <li><a href="">Resources</a></li>
-                              <li><a href="">Kofi</a></li>
-                           </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+            </div>
+            <hr>
+            <div class="footer-copyright-area text-center pb-3">
+               <span>© 2023 Cosplay Collection. All rights reserved. Theme made with passion by jThemes Studio. Coding
+                  with
+                  vigour by Joyce Zhang</span>
             </div>
          </div>
-         <hr>
-         <div class="footer-copyright-area text-center pb-3">
-            <span>© 2023 Cosplay Collection. All rights reserved. Theme made with passion by jThemes Studio. Coding with
-               vigour by Joyce Zhang</span>
-         </div>
-      </div>
-   </footer>
-   <!-- footer area end -->
-   <!-- jquery -->
+      </footer>
+      <!-- footer area end -->
+      <!-- jquery -->
 
-   <script src="/assets/js/jquery.min.js"></script>
-   <script src="/assets/js/jquery.countdown.min.js"></script>
+      <script src="/assets/js/jquery.min.js"></script>
+      <script src="/assets/js/jquery.countdown.min.js"></script>
 
-   <!-- animation -->
-   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <!-- animation -->
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-   <!-- magnific popup -->
-   <script src="/assets/js/jquery.magnific-popup.min.js"></script>
+      <!-- magnific popup -->
+      <script src="/assets/js/jquery.magnific-popup.min.js"></script>
 
-   <!-- bootstrap -->
-   <script src="/assets/js/bootstrap.min.js"></script>
+      <!-- bootstrap -->
+      <script src="/assets/js/bootstrap.min.js"></script>
 
-   <!-- slick -->
-   <script src="/assets/js/slick.min.js"></script>
+      <!-- slick -->
+      <script src="/assets/js/slick.min.js"></script>
 
-   <!-- parallax js -->
-   <script src="/assets/js/parallax.min.js"></script>
+      <!-- parallax js -->
+      <script src="/assets/js/parallax.min.js"></script>
 
-   <!-- javaScript -->
-   <script src="/assets/js/main2.js"></script>
+      <!-- javaScript -->
+      <script src="/assets/js/main2.js"></script>
 
-   <!-- color switch -->
-   <script src="/color-switch/switch.js"></script>
+      <!-- color switch -->
+      <script src="/color-switch/switch.js"></script>
 
 
 </body>

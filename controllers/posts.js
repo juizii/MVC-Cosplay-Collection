@@ -3,18 +3,15 @@ const Post = require("../models/Post");
 const Ref = require("../models/Ref");
 const Countdown = require("../models/Countdown");
 
-
 module.exports = {
   getProfile: async (req, res) => {
     try {
       const posts = await Post.find({ user: req.user.id });
-    
-    
+
       const userId = req.user.id;
 
-    // Retrieve the countdown document for the logged-in user
-    const countdown = await Countdown.findOne({ user: userId });
-
+      // Retrieve the countdown document for the logged-in user
+      const countdown = await Countdown.findOne({ user: userId });
 
       res.render("profile.ejs", { posts, user: req.user, countdown });
     } catch (err) {
@@ -24,13 +21,13 @@ module.exports = {
   getPost: async (req, res) => {
     try {
       const postId = req.params.id;
-  
+
       // Fetch the specific post
       const post = await Post.findById(postId);
-  
+
       // Fetch the references related to the specific post
       const refs = await Ref.find({ postId: postId });
-  
+
       res.render("post.ejs", { post: post, user: req.user, refs: refs });
     } catch (err) {
       console.log(err);
@@ -91,40 +88,40 @@ module.exports = {
       res.redirect(`/post/${postId}`);
     }
   },
-  
-editPost: async (req, res) => {
-  try {
-    console.log(req.body);
-    console.log(req.file);
 
-    const post = await Post.findById(req.params.id);
+  editPost: async (req, res) => {
+    try {
+      console.log(req.body);
+      console.log(req.file);
 
-    if (req.file) {
-      // Upload new image to cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path);
+      const post = await Post.findById(req.params.id);
 
-      // Delete previous image from cloudinary
-      await cloudinary.uploader.destroy(post.cloudinaryId);
+      if (req.file) {
+        // Upload new image to cloudinary
+        const result = await cloudinary.uploader.upload(req.file.path);
 
-      // Update post with new image and cloudinary ID
-      post.title = req.body.title;
-      post.image = result.secure_url;
-      post.cloudinaryId = result.public_id;
-      post.media = req.body.media;
-    } else {
-      // Update post without changing image
-      post.title = req.body.title;
-      post.media = req.body.media;
+        // Delete previous image from cloudinary
+        await cloudinary.uploader.destroy(post.cloudinaryId);
+
+        // Update post with new image and cloudinary ID
+        post.title = req.body.title;
+        post.image = result.secure_url;
+        post.cloudinaryId = result.public_id;
+        post.media = req.body.media;
+      } else {
+        // Update post without changing image
+        post.title = req.body.title;
+        post.media = req.body.media;
+      }
+
+      await post.save();
+
+      console.log("Successfully Edited!");
+      res.redirect(`/profile`);
+    } catch (err) {
+      console.log(err);
     }
-
-    await post.save();
-
-    console.log("Successfully Edited!");
-    res.redirect(`/profile`);
-  } catch (err) {
-    console.log(err);
-  }
-},
+  },
   deletePost: async (req, res) => {
     try {
       // Find post by id
@@ -145,20 +142,19 @@ editPost: async (req, res) => {
       if (!ref) {
         return res.status(404).send("Ref not found");
       }
-    
+
       if (ref.cloudinaryId) {
         await cloudinary.uploader.destroy(ref.cloudinaryId);
       }
-    
+
       await Ref.findByIdAndRemove(req.params.id);
-    
+
       console.log("Deleted Ref");
-    
-      res.redirect('back');
+
+      res.redirect("back");
     } catch (err) {
       console.log(err);
-      res.redirect('back');
+      res.redirect("back");
     }
   },
-
 };

@@ -1,71 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link
-   rel="icon"
-   type="image/png"
-   sizes="32x32"
-   href="/imgs/favicon-32x32.png"
- />
+   <link rel="icon" type="image/png" sizes="32x32" href="/imgs/favicon-32x32.png" />
    <title>Cosplay Collection</title>
-   
+
    <!-- google font -->
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-   
+
    <!-- animation -->
    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-   
+
    <!-- magnific popup -->
    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-   
+
    <!-- font awesome -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-   integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-   crossorigin="anonymous" referrerpolicy="no-referrer">
-   
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+
    <!-- slik carousel -->
    <link rel="stylesheet" href="assets/css/slick-theme.css">
    <link rel="stylesheet" href="assets/css/slick.css">
-   
+
    <!-- bootstrap -->
    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-   
+
    <!-- css -->
    <link rel="stylesheet" href="assets/css/style.css">
 
-	<!-- Color switch Alternatives -->
+   <!-- Color switch Alternatives -->
    <link rel="stylesheet" type="text/css" href="color-switch/css/switch.css">
-	<link href="color-switch/css/color-2.css" rel="alternate stylesheet" type="text/css" title="color-2">
-	<link href="color-switch/css/color-3.css" rel="alternate stylesheet" type="text/css" title="color-3">
-	<link href="color-switch/css/color-4.css" rel="alternate stylesheet" type="text/css" title="color-4">
-	<link href="color-switch/css/color-5.css" rel="alternate stylesheet" type="text/css" title="color-5">
-	<link href="color-switch/css/color-6.css" rel="alternate stylesheet" type="text/css" title="color-6">
-	<link href="color-switch/css/color-7.css" rel="alternate stylesheet" type="text/css" title="color-7">
-	<link href="color-switch/css/color-8.css" rel="alternate stylesheet" type="text/css" title="color-8">
-   
+   <link href="color-switch/css/color-2.css" rel="alternate stylesheet" type="text/css" title="color-2">
+   <link href="color-switch/css/color-3.css" rel="alternate stylesheet" type="text/css" title="color-3">
+   <link href="color-switch/css/color-4.css" rel="alternate stylesheet" type="text/css" title="color-4">
+   <link href="color-switch/css/color-5.css" rel="alternate stylesheet" type="text/css" title="color-5">
+   <link href="color-switch/css/color-6.css" rel="alternate stylesheet" type="text/css" title="color-6">
+   <link href="color-switch/css/color-7.css" rel="alternate stylesheet" type="text/css" title="color-7">
+   <link href="color-switch/css/color-8.css" rel="alternate stylesheet" type="text/css" title="color-8">
+
 </head>
+
 <body>
    <!-- This code is use for color chooser, you can delete -->
-	<div id="switch-color" class="color-switcher">
-		<div class="open"><i class="fas fa-cog"></i></div>
-		<h4>COLOR OPTION</h4>
-		<ul>
-			<li><a class="color-1" onclick="setActiveStyleSheet('main'); return false;" href="#"><i class="fas fa-cog"></i></a> </li>
-			<li><a class="color-2" onclick="setActiveStyleSheet('color-2'); return false;" href="#"><i class="fas fa-cog"></i></a> </li>
-			<li><a class="color-3" onclick="setActiveStyleSheet('color-3'); return false;" href="#"><i class="fas fa-cog"></i></a> </li>
-			<li><a class="color-4" onclick="setActiveStyleSheet('color-4'); return false;" href="#"><i class="fas fa-cog"></i></a> </li>
-			<li><a class="color-5" onclick="setActiveStyleSheet('color-5'); return false;" href="#"><i class="fas fa-cog"></i></a> </li>
-			<li><a class="color-6" onclick="setActiveStyleSheet('color-6'); return false;" href="#"><i class="fas fa-cog"></i></a> </li>
-			<li><a class="color-7" onclick="setActiveStyleSheet('color-7'); return false;" href="#"><i class="fas fa-cog"></i></a> </li>
-			<li><a class="color-8" onclick="setActiveStyleSheet('color-8'); return false;" href="#"><i class="fas fa-cog"></i></a> </li>
-		</ul>
-	</div>
+   <div id="switch-color" class="color-switcher">
+      <div class="open"><i class="fas fa-cog"></i></div>
+      <h4>COLOR OPTION</h4>
+      <ul>
+         <li><a class="color-1" onclick="setActiveStyleSheet('main'); return false;" href="#"><i
+                  class="fas fa-cog"></i></a> </li>
+         <li><a class="color-2" onclick="setActiveStyleSheet('color-2'); return false;" href="#"><i
+                  class="fas fa-cog"></i></a> </li>
+         <li><a class="color-3" onclick="setActiveStyleSheet('color-3'); return false;" href="#"><i
+                  class="fas fa-cog"></i></a> </li>
+         <li><a class="color-4" onclick="setActiveStyleSheet('color-4'); return false;" href="#"><i
+                  class="fas fa-cog"></i></a> </li>
+         <li><a class="color-5" onclick="setActiveStyleSheet('color-5'); return false;" href="#"><i
+                  class="fas fa-cog"></i></a> </li>
+         <li><a class="color-6" onclick="setActiveStyleSheet('color-6'); return false;" href="#"><i
+                  class="fas fa-cog"></i></a> </li>
+         <li><a class="color-7" onclick="setActiveStyleSheet('color-7'); return false;" href="#"><i
+                  class="fas fa-cog"></i></a> </li>
+         <li><a class="color-8" onclick="setActiveStyleSheet('color-8'); return false;" href="#"><i
+                  class="fas fa-cog"></i></a> </li>
+      </ul>
+   </div>
    <!-- end color switch -->
 
    <div class="body-wrap">
@@ -76,29 +81,31 @@
                <a class="navbar-brand" href="/">
                   <img src="assets/images/cosplay/logo.png" alt="Header Logo">
                </a>
-              
+
                <div class="button-group">
-                  <a href ="/login"><button class="custom-btn2">Login</button></a>
+                  <a href="/login"><button class="custom-btn2">Login</button></a>
                </div>
 
                <!-- mobile menu -->
                <div class="mobile-view-header d-block d-lg-none d-flex gap-3 align-items-center">
 
-                  <a class="border rounded-1 py-1 px-2 bg-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                  <a class="border rounded-1 py-1 px-2 bg-light" data-bs-toggle="offcanvas" href="#offcanvasExample"
+                     role="button" aria-controls="offcanvasExample">
                      <span class="navbar-toggler-icon nav-toggler-icon"></span>
                   </a>
 
-                  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" >
+                  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample">
                      <div class="offcanvas-header">
                         <a class="navbar-brand" href="/">
                            <img src="assets/images/cosplay/logo.png" alt="Header Logo">
                         </a>
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                           aria-label="Close"></button>
                      </div>
                      <div class="offcanvas-body">
                         <div class="dropdown mt-3">
                            <ul class="navbar-nav m-auto">
-                             
+
                               <li class="nav-item">
                                  <a href="/login" class="nav-link py-3">Login</a>
                               </li>
@@ -114,12 +121,12 @@
 
             </div>
          </nav>
-         
-         
+
+
          <!-- hero sec start -->
-         <section class="hero-sec"  style="background-image: url(/assets/images/banner/group.png);">
+         <section class="hero-sec" style="background-image: url(/assets/images/banner/group.png);">
             <div class="hero-slider-wrap">
-               
+
                <div class="hero-slider-item overflow-hidden">
                   <div class="container">
                      <div class="row align-items-center">
@@ -133,21 +140,23 @@
                                     Keep track of what you need done before your next con.
                                  </p>
                                  <div class="button-group">
-                                    <a href ="/signup"><button class="custom-btn2">Sign Up</button></a>
+                                    <a href="/signup"><button class="custom-btn2">Sign Up</button></a>
                                  </div>
-                                 <img src="/assets/images/dots/dots.png" alt="Shadow Image" class="dots-1 opacity-50 img-moving-anim2">
+                                 <img src="/assets/images/dots/dots.png" alt="Shadow Image"
+                                    class="dots-1 opacity-50 img-moving-anim2">
                               </div>
                            </div>
                         </div>
                         <div class="col-lg-4 col-md-6 order-md-2 order-1">
                            <div class="item-image">
                               <div class="img-1 img-moving-anim1">
-                                 <img src="/assets/images/cosplay/maisy.jpg" alt="Event template">
+                                 <img src="/assets/images/cosplay/group.jpg" alt="Event template">
                               </div>
                               <div class="img-2 img-moving-anim2">
                                  <img src="/assets/images/cosplay/omori.jpg" alt="Event template">
                               </div>
-                              <img src="/assets/images/dots/dots2.png" alt="Shadow Image" class="dots-2 img-moving-anim3">
+                              <img src="/assets/images/dots/dots2.png" alt="Shadow Image"
+                                 class="dots-2 img-moving-anim3">
                            </div>
                         </div>
                      </div>
@@ -156,7 +165,7 @@
                      </div>
                   </div>
                </div>
-               
+
                <div class="hero-slider-item overflow-hidden">
                   <div class="container position-relative">
                      <div class="row align-items-center slide-2">
@@ -167,7 +176,7 @@
                                     Never Forget Your Cosplans Ever Again!
                                  </h3>
                                  <div class="button-group">
-                                    <a href ="/login"><button class="custom-btn2">Login</button></a>
+                                    <a href="/login"><button class="custom-btn2">Login</button></a>
                                  </div>
                                  <div class="highlight-text2 img-moving-anim4">
                                     <strong class="big-title"><span class="text">ON TIME</span></strong>
@@ -182,7 +191,7 @@
                   </div>
                   <img src="/assets/images/dots/dots5.png" alt="Shadow Image" class="dots-3 img-moving-anim3">
                </div>
-               
+
                <div class="hero-slider-item overflow-hidden">
                   <div class="container">
                      <div class="row align-items-center slide-3">
@@ -190,23 +199,24 @@
                            <div class="slider-item-content-wrap">
                               <div class="item-content">
                                  <h3 class="item-title1">
-                                    Always be Prepared. 
+                                    Always be Prepared.
                                  </h3>
                                  <p class="item-sub">
                                     Easy Said, Easily Done.
                                  </p>
                                  <div class="button-group">
-                                    <a href ="/signup"><button class="custom-btn2">Sign Up</button></a>
+                                    <a href="/signup"><button class="custom-btn2">Sign Up</button></a>
                                  </div>
-                                 <img src="/assets/images/dots/dots.png" alt="Shadow Image" class="dots-1 img-moving-anim3">
+                                 <img src="/assets/images/dots/dots.png" alt="Shadow Image"
+                                    class="dots-1 img-moving-anim3">
                               </div>
                            </div>
                         </div>
                         <div class="col-lg-4 col-md-6 order-md-2 order-1">
                            <div class="item-video">
                               <div class="img-3 img-moving-anim1">
-                                 <img src="/assets/images/cosplay/amongus.jpg" alt="Event template">
-                                
+                                 <img src="/assets/images/cosplay/me.jpg" alt="Event template">
+
                               </div>
                            </div>
                            <img src="/assets/images/dots/dots2.png" alt="Shadow Image" class="dots-5 img-moving-anim3">
@@ -217,17 +227,17 @@
                      </div>
                   </div>
                </div>
-               
+
             </div>
          </section>
          <!-- hero sec start -->
       </header>
       <!-- header area end -->
-      
+
       <!-- contact sec end -->
       <div class="container">
          <hr>
       </div>
 
 
-<%- include('partials/footer') -%>
+      <%- include('partials/footer') -%>
