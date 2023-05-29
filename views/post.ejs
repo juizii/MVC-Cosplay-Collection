@@ -474,11 +474,10 @@
                      <div class="section-head col-xl-9 m-auto text-center mb-5">
                         <span class="label">Links</span>
                      </div>
-                     <% for (var i=0; i < refs.length; i++) { %>
-                        <% if (!refs[i].image && refs[i].tag==="wigs" ) { %>
-                           <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear"
-                              data-aos-duration="1000"
-                              style="background-image: url(/assets/images/banner/schedule1.png);">
+                     
+                     <% for (var i = 0; i < refs.length; i++) { %>
+                        <% if (!refs[i].image && refs[i].tag === "wigs") { %>
+                           <div class="row schedule-item" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" style="background-image: url(/assets/images/banner/schedule1.png);">
                               <div class="col-lg-4">
                                  <div class="d-flex align-items-center justify-content-around">
                                     <div class="card-thumb">
@@ -491,26 +490,33 @@
                                        <span class="date d-block">
                                           <%= refs[i].title %>
                                        </span>
-
                                     </div>
                                  </div>
                               </div>
                               <div class="col-lg-8">
                                  <div class="d-flex align-items-center justify-content-between">
+                                    <div class="col-lg-12">
+                                       <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" id="checkbox<%= i %>" value="<%= refs[i]._id %>">
+                                          <label class="form-check-label" for="checkbox<%= i %>">
+                                             Check this item
+                                          </label>
+                                       </div>
+                                    </div>
                                     <div class="card-title-area col-7">
                                        <p class="title-desc">
                                           <a href="<%= refs[i].link %>" target="_blank">
                                              <div class="bookmark">
-                                                <% var url=refs[i].link; %>
-                                                   <div class="preview-image" data-url="<%= url %>"></div>
-                                                   <span>Link</span>
+                                                
+                                                <% var url = refs[i].link; %>
+                                                <div class="preview-image" data-url="<%= url %>"></div>
+                                                <span>Link</span>
                                              </div>
                                           </a>
                                        </p>
                                     </div>
                                     <div class="card-button col-5">
-                                       <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE"
-                                          method="POST">
+                                       <form action="/post/<%= post._id %>/deleteRef/<%= refs[i]._id %>?_method=DELETE" method="POST">
                                           <a>
                                              <button type="submit" class="custom-btn2">
                                                 <i class="fa fa-trash" aria-hidden="true"></i>
@@ -518,13 +524,12 @@
                                           </a>
                                        </form>
                                     </div>
+                                    
                                  </div>
                               </div>
                            </div>
-                           <% } %>
-                              <% } %>
-
-                  </div>
+                        <% } %>
+                     <% } %>
 
                   <!-- makeup -->
 
