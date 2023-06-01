@@ -11,7 +11,6 @@ router.post("/createPost", upload.single("file"), postsController.createPost);//
 
 router.post("/:id/createRef", upload.single("file"), postsController.createRef);
 
-
 router.put("/editPost/:id", upload.single("image"), postsController.editPost); 
 
 router.delete("/deletePost/:id", postsController.deletePost);

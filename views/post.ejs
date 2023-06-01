@@ -395,7 +395,9 @@
                                  </div>
                               </div>
                               <div class="col-lg-8">
+                                 
                                  <div class="d-flex align-items-center justify-content-between">
+                                    
                                     <div class="card-title-area col-7">
 
                                        <p class="title-desc">
@@ -497,13 +499,18 @@
                                  <div class="d-flex align-items-center justify-content-between">
                                     <div class="col-lg-12">
                                        <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" id="checkbox<%= i %>" value="<%= refs[i]._id %>">
+                                          <input class="form-check-input" type="checkbox" id="checkbox<%= i %>" name="checkbox" value="<%= refs[i]._id %>" <% if (refs[i].completed) { %>checked<% } %>>
                                           <label class="form-check-label" for="checkbox<%= i %>">
-                                             Check this item
+                                            <% if (refs[i].completed) { %>
+                                              <del><%= refs[i].title %></del>
+                                            <% } else { %>
+                                              <%= refs[i].title %>
+                                            <% } %>
                                           </label>
-                                       </div>
+                                        </div>
                                     </div>
                                     <div class="card-title-area col-7">
+                                       
                                        <p class="title-desc">
                                           <a href="<%= refs[i].link %>" target="_blank">
                                              <div class="bookmark">
