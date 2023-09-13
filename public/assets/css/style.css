@@ -4,7 +4,7 @@ body {
 }
 
 .body-wrap {
-  overflow: hidden;
+  /* overflow: hidden; */
   position: relative;
   -webkit-font-smoothing: antialiased;
 }

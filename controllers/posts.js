@@ -133,9 +133,9 @@ module.exports = {
       // Delete post from db
       await Post.remove({ _id: req.params.id });
       console.log("Deleted Post");
-      res.redirect("/profile");
+      res.redirect("/profile#speakers");
     } catch (err) {
-      res.redirect("/profile");
+      res.redirect("/profile#speakers");
     }
   },
   deleteRef: async (req, res) => {
