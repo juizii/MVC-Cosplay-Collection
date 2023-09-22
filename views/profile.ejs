@@ -11,6 +11,7 @@
 
             </div>
             <div class="section-head col-xl-9 m-auto text-center mb-5">
+               
                <form id="countdown" action="/profile/countdown" method="POST">
                   <input type="date" id="countdown-date" name="countdownDate class=" form-control" required>
                   <button class="custom-btn custom-btn2" type="submit" id="countdown-submit">Set/Stop</button>
@@ -22,6 +23,7 @@
                   </ul>
 
                </form>
+           
             </div>
 
 
@@ -85,11 +87,12 @@
          </div>
 
          <br>
-
+       
          <div class="speakers-gallery-items-wrap">
 
             <div class="row">
                <% for(var i=0; i<posts.length; i++) {%>
+                  <% if (posts[i].user.toString() === user.id.toString()) { %>
                   <!-- placed here because each new post will have the same styling and animation, as well fit in a row of 4. -->
                   <div class="col-md-6 col-lg-4 col-xl-3">
                      <div id="characterSpace" class="speakers-gallery-item" data-aos="fade-up" data-aos-easing="linear"
@@ -127,6 +130,7 @@
 
                      </div>
                   </div>
+                  <% } %>
                   <% } %>
             </div>
 
@@ -466,6 +470,6 @@
             <hr>
          </div>
 
-
+      
 
          <%- include('partials/footer') -%>
